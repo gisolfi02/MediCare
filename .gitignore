@@ -1,0 +1,13 @@
+# Default ignored files
+/shelf/
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+# CodeStream ignored files
+/../../MediCare\.idea/codestream.xml
+
+target
+MediCare/target
+.idea
