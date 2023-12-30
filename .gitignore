@@ -11,3 +11,4 @@
 target
 MediCare/target
 .idea
+/MediCare/src/main/java/DataTier/MediCare/ConPool.java
