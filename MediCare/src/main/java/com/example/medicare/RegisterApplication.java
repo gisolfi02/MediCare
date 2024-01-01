@@ -14,6 +14,7 @@ public class RegisterApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 414, 896);
         stage.setTitle("MediCare");
         stage.setScene(scene);
+        stage.setResizable(false); ///INFORMA CAMBIAMENTO
         stage.show();
     }
 

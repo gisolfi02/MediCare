@@ -1,17 +1,22 @@
 package DataTier.MediCare.Utente;
 
+import DataTier.MediCare.DateUtils;
+
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.Locale;
 
 public class Utente {
     private String email;
     private String password;
     private String nome;
     private String cognome;
-    private GregorianCalendar ddn;
+    private LocalDate ddn;
     private String numero;
 
     public String getEmail() {
@@ -55,11 +60,11 @@ public class Utente {
         this.cognome = cognome;
     }
 
-    public GregorianCalendar getDdn() {
+    public LocalDate getDdn() {
         return ddn;
     }
 
-    public void setDdn(GregorianCalendar ddn) {
+    public void setDdn(LocalDate ddn) {
         this.ddn = ddn;
     }
 
