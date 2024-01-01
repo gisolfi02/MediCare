@@ -36,13 +36,12 @@ public class RegisterController {
         String password = fieldPassword.getText();
         LocalDate dataDiNascita =  fieldDataDiNascita.getValue();
         Utente u = new Utente();
-        u.setNome(nome);
-        u.setCognome(cognome);
-        u.setEmail(email);
-        u.setPassword(password);
+
         u.setDdn(dataDiNascita);
-        u.setNumero(telefono);
         UtenteDAO uDao = new UtenteDAO();
-        uDao.doSave(u);
+        if(u.setNome(nome) &&  u.setCognome(cognome) && u.setEmail(email) && u.setNumero(telefono) && u.setPassword(password))
+            uDao.doSave(u);
+        else
+            throw new RuntimeException("Valori inseriti errati");
     }
 }
