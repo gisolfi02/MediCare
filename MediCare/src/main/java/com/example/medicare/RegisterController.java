@@ -4,11 +4,11 @@ import DataTier.MediCare.Utente.Utente;
 import DataTier.MediCare.Utente.UtenteDAO;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 import java.time.LocalDate;
-import java.util.GregorianCalendar;
 
 
 public class RegisterController {
@@ -25,7 +25,8 @@ public class RegisterController {
     private PasswordField fieldPassword;
     @FXML
     private DatePicker fieldDataDiNascita;
-
+    @FXML
+    private Label error;
 
     @FXML
     protected void onRegistratiButtonClick(){
@@ -37,11 +38,34 @@ public class RegisterController {
         LocalDate dataDiNascita =  fieldDataDiNascita.getValue();
         Utente u = new Utente();
 
-        u.setDdn(dataDiNascita);
         UtenteDAO uDao = new UtenteDAO();
-        if(u.setNome(nome) &&  u.setCognome(cognome) && u.setEmail(email) && u.setNumero(telefono) && u.setPassword(password))
-            uDao.doSave(u);
-        else
-            throw new RuntimeException("Valori inseriti errati");
+        if(!u.setNome(nome)){
+            error.setText("Nome non valido");
+            throw new RuntimeException();
+        }
+        if (!u.setCognome(cognome)){
+            error.setText("Cognome non valido");
+            throw new RuntimeException();
+        }
+        if (!u.setEmail(email)){
+            error.setText("Email non valida");
+            throw new RuntimeException();
+        }
+        if (!u.setPassword(password)){
+            error.setText("Password non valida");
+            throw new RuntimeException();
+        }
+        if (!u.setDdn(dataDiNascita)){
+            error.setText("Data di nascita non valida");
+            throw new RuntimeException();
+        }
+        if (!u.setNumero(telefono)){
+            error.setText("Numero di telefono non valido");
+            throw new RuntimeException();
+        }
+        if(!uDao.doSave(u)){
+            error.setText("Utente già registrato");
+            throw new RuntimeException();
+        }
     }
 }

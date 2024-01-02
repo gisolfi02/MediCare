@@ -12,7 +12,7 @@
    <children>
       <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="159.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@logo.png" />
+            <Image url="@Images/LogoMedicare.png" />
          </image>
       </ImageView>
       <Pane layoutX="-15.0" layoutY="720.0" prefHeight="79.0" prefWidth="430.0" style="-fx-background-color: #E6F7FF;">

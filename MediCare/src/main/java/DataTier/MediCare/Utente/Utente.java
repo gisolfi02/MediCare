@@ -1,15 +1,10 @@
 package DataTier.MediCare.Utente;
 
-import DataTier.MediCare.DateUtils;
-
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.time.LocalDate;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Locale;
 
 public class Utente {
     private String email;
@@ -37,7 +32,7 @@ public class Utente {
     }
 
     public boolean setPassword(String password) {
-        if(password.matches("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$")) {
+        if(password.matches("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-.]).{8,}$")) {
             try {
                 MessageDigest digest =
                         MessageDigest.getInstance("SHA-1");
@@ -86,8 +81,13 @@ public class Utente {
         return ddn;
     }
 
-    public void setDdn(LocalDate ddn) {
+    public boolean setDdn(LocalDate ddn) {
+        LocalDate d = LocalDate.now();
+        if(ddn==null || d.getYear()-ddn.getYear()< 18) {
+            return false;
+        }
         this.ddn = ddn;
+        return true;
     }
 
     public String getNumero() {
