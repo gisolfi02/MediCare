@@ -1,0 +1,33 @@
+
+/* Stile per AnchorPane (background #435363) */
+.customAnchorPane {
+    -fx-background-color: #435363; /* Sfondo specifico */
+    -fx-border-width: 5px;
+}
+
+/* Stile per Pane (charcoal) */
+.customPane {
+    -fx-background-color: #435262ff;
+    -fx-border-width: 1px;
+    -fx-background-radius: 10; /* Raggio degli angoli del background */
+}
+
+/* Stile per i Button all'interno del Pane */
+.customPane .button {
+    -fx-background-color: #475463ff;
+    -fx-border-width: 5px;
+}
+
+/* Stile per la Label del logo */
+.logoLabel {
+    -fx-font-family: "Book Antiqua";
+    -fx-font-size: 24.0;
+    -fx-font-weight: bold; /* Testo in grassetto */
+    -fx-text-fill: white; /* Colore del testo bianco */
+}
+
+/* Stile per i Tooltip */
+.button:hover .tooltip {
+    -fx-background-color: #485563ff; /* Colore di sfondo del tooltip */
+    -fx-text-fill: white; /* Colore del testo del tooltip */
+}

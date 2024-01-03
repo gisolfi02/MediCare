@@ -8,35 +8,60 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="896.0" prefWidth="414.0" style="-fx-background-color: #435363;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="159.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Images/LogoMedicare.png" />
-         </image>
-      </ImageView>
-      <Pane layoutY="817.0" prefHeight="79.0" prefWidth="414.0" style="-fx-background-color: #E6F7FF;">
-         <children>
-            <Label layoutX="98.0" layoutY="23.0" text="Welcome to MediCare">
-               <font>
-                  <Font size="21.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
-      <Button layoutX="114.0" layoutY="335.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="189.0" style="-fx-background-radius: 50; -fx-background-color: #007BFF;" text="Effettua Prenotazione" textAlignment="CENTER" textFill="WHITE" AnchorPane.rightAnchor="110.4">
-         <font>
-            <Font name="Dubai Regular" size="12.0" />
-         </font></Button>
-      <Button layoutX="114.0" layoutY="469.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="189.0" style="-fx-background-radius: 50; -fx-background-color: #007BFF;" text="Cerca Ospedali" textFill="WHITE">
-         <font>
-            <Font name="Dubai Regular" size="12.0" />
-         </font>
-      </Button>
-      <Label layoutX="185.0" layoutY="116.0" text="MediCare" textFill="WHITE">
-         <font>
-            <Font name="Dubai Regular" size="12.0" />
-         </font>
-      </Label>
-   </children>
+<?import javafx.scene.control.Tooltip?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="896.0" prefWidth="414.0" style="-fx-background-color: #435363;" styleClass="customAnchorPane" stylesheets="Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <Pane layoutY="796.0" prefHeight="100.0" prefWidth="414.0" styleClass="customPane" stylesheets="Style.css">
+      <children>
+         <Button fx:id="Home" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0" stylesheets="Style.css">
+            <graphic>
+               <ImageView fitHeight="60.0" fitWidth="60.0">
+                  <image>
+                     <Image url="@Images/home-icon-silhouette.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+            <tooltip>
+               <Tooltip text="Clicca per tornare alla Home" />
+            </tooltip>
+         </Button>
+         <Button fx:id="Profilo" layoutX="298.0" layoutY="6.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0" stylesheets="Style.css">
+            <graphic>
+               <ImageView fitHeight="60.0" fitWidth="60.0">
+                  <image>
+                     <Image url="@Images/user.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+            <tooltip>
+               <Tooltip text="Visualizza il tuo profilo" />
+            </tooltip>
+         </Button>
+         <Label layoutX="122.0" layoutY="33.0" prefHeight="36.0" prefWidth="171.0" stylesheets="Style.css" text=" Benvenuto in MediCare">
+         </Label>
+      </children>
+   </Pane>
+
+   <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="107.0" layoutY="49.0">
+      <image>
+         <Image url="@Images/LogoMedicare.png" />
+      </image>
+   </ImageView>
+
+   <Button layoutX="17.0" layoutY="413.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="180.0" stylesheets="Style.css" text="Ricerca">
+      <tooltip>
+         <Tooltip text="Cerca un Ospedale" />
+      </tooltip>
+   </Button>
+
+   <Button layoutX="217.0" layoutY="413.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="180.0" stylesheets="Style.css" text="Prenotazioni">
+      <tooltip>
+         <Tooltip text="Visualizza le prenotazioni" />
+      </tooltip>
+   </Button>
+
+   <Label layoutX="176.0" layoutY="205.0" styleClass="logoLabel" text="Medicare">
+      <font>
+         <Font name="Book Antiqua" size="12.0" />
+      </font>
+   </Label>
 </AnchorPane>
