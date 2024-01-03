@@ -85,14 +85,32 @@
     -fx-text-fill: white; /* Colore del testo bianco */
 }
 
-.TextField{
-    -fx-background-radius: 15px;
-    -fx-border-radius: 15px;
-    -fx-border-width: 2px;
+.TextField, .PasswordField {
+    -fx-font-size: 15px;
+    -fx-background-color: trasparent; /* Sfondo trasparente */
+    -fx-background-radius: 10px;
+    -fx-border-color: #FFFFFF; /* Colore della linea */
+    -fx-border-radius: 10px;
+    -fx-border-width: 2 2 2 2; /* Spessore della linea (bottom) */
+    -fx-text-fill: white;
 }
 
-.PasswordField{
-    -fx-background-radius: 15px;
-    -fx-border-radius: 15px;
-    -fx-border-width: 2px;
+/* Aggiungi uno stile quando il campo di testo è selezionato */
+.TextField:focused, .PasswordField:focused {
+    -fx-border-color: #505f6e; /* Cambia il colore della linea quando il campo è selezionato */
+}
+
+/* Rimuovi la linea sotto il testo di prompt */
+.TextField .prompt-text, .PasswordField .prompt-text {
+    -fx-border-width: 0;
+}
+
+/* Rimuovi il bordo del campo di testo selezionato */
+.TextField:focused .text, .PasswordField:focused .text {
+    -fx-border-color: transparent;
+}
+
+/* Rimuovi il bordo del campo di testo quando il prompt è visualizzato */
+.TextField:showing .text, .PasswordField:showing .text {
+    -fx-border-color: transparent;
 }

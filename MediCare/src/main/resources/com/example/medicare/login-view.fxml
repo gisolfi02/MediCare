@@ -29,8 +29,8 @@
       </font>
    </Label>
 
-   <TextField fx:id="fieldEmail" layoutX="87.0" layoutY="355.0" prefHeight="40.0" prefWidth="238.0" promptText="Email" style="-fx-background-color: #FFFFFF;" styleClass="TextField" stylesheets="@Style.css" AnchorPane.bottomAnchor="501.0" />
-   <PasswordField fx:id="fieldPassword" layoutX="87.0" layoutY="428.0" prefHeight="40.0" prefWidth="238.0" promptText="Password" style="-fx-background-color: #ffffff;" styleClass="TextField" stylesheets="@Style.css" AnchorPane.bottomAnchor="428.0" />
+   <TextField fx:id="fieldEmail" layoutX="87.0" layoutY="355.0" prefHeight="40.0" prefWidth="238.0" promptText="Email" styleClass="TextField" stylesheets="@Style.css" AnchorPane.bottomAnchor="501.0" />
+   <PasswordField fx:id="fieldPassword" layoutX="87.0" layoutY="428.0" prefHeight="40.0" prefWidth="238.0" promptText="Password" styleClass="TextField" stylesheets="@Style.css" AnchorPane.bottomAnchor="428.0" />
    <Button fx:id="LoginButton" layoutX="142.0" layoutY="547.0" mnemonicParsing="false" onAction="#onLoginButtonClick" prefHeight="36.0" prefWidth="132.0" styleClass="LogInButton" stylesheets="@Style.css" text="Login" textFill="WHITE">
       <cursor>
          <Cursor fx:constant="HAND" />
@@ -46,5 +46,15 @@
       <font>
          <Font size="16.0" />
       </font></Label>
+   <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="45.0" layoutY="358.0">
+      <image>
+         <Image url="@Images/user.png" />
+      </image>
+   </ImageView>
+   <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="45.0" layoutY="431.0">
+      <image>
+         <Image url="@Images/padlock.png" />
+      </image>
+   </ImageView>
 
 </AnchorPane>
