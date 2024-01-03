@@ -29,7 +29,7 @@
 
 /* Stile per Pane (charcoal) */
 .customPane {
-    -fx-background-color: #475463;
+    -fx-background-color: #36424e;
     -fx-border-width: 1px;
     -fx-background-radius: 10; /* Raggio degli angoli del background */
 }
@@ -37,8 +37,8 @@
 /* Stile per i Button all'interno del Pane */
 .buttonCustomPane {
     -fx-padding: 10 20; /* Padding del bottone (top, right, bottom, left) */
-    -fx-background-color: #475463;
-    -fx-border-color: #475463;
+    -fx-background-color: none;
+    -fx-border-color: none;
 }
 
 .buttonCustomPane:hover {
