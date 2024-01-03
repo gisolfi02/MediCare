@@ -3,6 +3,7 @@ package DataTier.MediCare.Utente;
 import DataTier.MediCare.ConPool;
 
 import java.sql.*;
+import java.time.LocalDate;
 
 public class UtenteDAO {
 
@@ -26,6 +27,29 @@ public class UtenteDAO {
             }else {
                 return false;
             }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public Utente doRetrieveByEmailPassword(String email, String password){
+        try (Connection con = ConPool.getConnection()) {
+            PreparedStatement ps =
+                    con.prepareStatement("SELECT email, password, nome, cognome, Numero, DDN FROM utente WHERE email = ? AND password =SHA1(?)");
+            ps.setString(1, email);
+            ps.setString(2, password);
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()) {
+               Utente u = new Utente();
+               u.setEmail(rs.getString(1));
+               u.setPassword(rs.getString(2));
+               u.setNome(rs.getString(3));
+               u.setCognome(rs.getString(4));
+               u.setNumero(rs.getString(5));
+               u.setDdn(rs.getDate(6).toLocalDate());
+               return u;
+            }else
+                return null;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
