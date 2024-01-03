@@ -114,3 +114,4 @@
 .TextField:showing .text, .PasswordField:showing .text {
     -fx-border-color: transparent;
 }
+
