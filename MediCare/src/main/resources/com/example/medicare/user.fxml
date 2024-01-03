@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="896.0" prefWidth="414.0" style="-fx-background-color: #435363;" styleClass="customAnchorPane" stylesheets="Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medicare.UserController">
+
+   <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="107.0" layoutY="49.0">
+      <image>
+         <Image url="@Images/LogoMedicare.png" />
+      </image>
+   </ImageView>
+
+   <Label layoutX="182.0" layoutY="200.0" styleClass="logoLabel" text="Medicare">
+      <font>
+         <Font name="Book Antiqua" size="12.0" />
+      </font>
+   </Label>
+   <Pane layoutY="796.0" prefHeight="100.0" prefWidth="414.0" styleClass="customPane" stylesheets="Style.css">
+      <children>
+         <Button fx:id="Home" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" onAction="#goHome" prefHeight="90.0" prefWidth="90.0" stylesheets="Style.css">
+            <graphic>
+               <ImageView fitHeight="60.0" fitWidth="60.0">
+                  <image>
+                     <Image url="@Images/home-icon-silhouette.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+            <tooltip>
+               <Tooltip text="Clicca per tornare alla Home" />
+            </tooltip>
+         </Button>
+         <Button fx:id="Profilo" layoutX="298.0" layoutY="6.0" mnemonicParsing="false" onAction="#goToProfile" prefHeight="90.0" prefWidth="90.0" stylesheets="Style.css">
+            <graphic>
+               <ImageView fitHeight="60.0" fitWidth="60.0">
+                  <image>
+                     <Image url="@Images/user.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+            <tooltip>
+               <Tooltip text="Visualizza il tuo profilo" />
+            </tooltip>
+         </Button>
+         <Label alignment="CENTER" layoutX="122.0" layoutY="33.0" prefHeight="36.0" prefWidth="171.0" stylesheets="Style.css" text=" Benvenuto in MediCare" />
+      </children>
+   </Pane>
+   <Label fx:id="account" alignment="CENTER" contentDisplay="CENTER" layoutX="43.0" layoutY="326.0" prefHeight="90.0" prefWidth="340.0" wrapText="true">
+      <font>
+         <Font name="Dubai Regular" size="20.0" />
+      </font>
+   </Label>
+   <Button layoutX="145.0" layoutY="529.0" mnemonicParsing="false" onAction="#doLogout" prefHeight="36.0" prefWidth="123.0" style="-fx-background-color: #38444FFF; -fx-background-radius: 50;" text="Esci" textFill="WHITE" />
+</AnchorPane>
