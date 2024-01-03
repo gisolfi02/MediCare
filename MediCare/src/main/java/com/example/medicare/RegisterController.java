@@ -2,6 +2,7 @@ package com.example.medicare;
 
 import DataTier.MediCare.Utente.Utente;
 import DataTier.MediCare.Utente.UtenteDAO;
+import LogicTier.MediCare.Registrazione.Registrazione;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
@@ -36,36 +37,40 @@ public class RegisterController {
         String telefono = fieldTelefono.getText();
         String password = fieldPassword.getText();
         LocalDate dataDiNascita =  fieldDataDiNascita.getValue();
-        Utente u = new Utente();
 
-        UtenteDAO uDao = new UtenteDAO();
-        if(!u.setNome(nome)){
-            error.setText("Nome non valido");
-            throw new RuntimeException();
-        }
-        if (!u.setCognome(cognome)){
-            error.setText("Cognome non valido");
-            throw new RuntimeException();
-        }
-        if (!u.setEmail(email)){
-            error.setText("Email non valida");
-            throw new RuntimeException();
-        }
-        if (!u.setPassword(password)){
-            error.setText("Password non valida");
-            throw new RuntimeException();
-        }
-        if (!u.setDdn(dataDiNascita)){
-            error.setText("Data di nascita non valida");
-            throw new RuntimeException();
-        }
-        if (!u.setNumero(telefono)){
-            error.setText("Numero di telefono non valido");
-            throw new RuntimeException();
-        }
-        if(!uDao.doSave(u)){
-            error.setText("Utente già registrato");
-            throw new RuntimeException();
+        Registrazione registrazione = new Registrazione();
+        int result = registrazione.doRegistrazione(nome,cognome,email,password,telefono,dataDiNascita,error);
+
+        //il valore di ritorno di registrazione indica per quale motivo la registrazione non è andata a buon fine
+        switch(result){
+            case 1: {
+                error.setText("Nome non valido");
+                throw new RuntimeException();
+            }
+            case 2: {
+                error.setText("Cognome non valido");
+                throw new RuntimeException();
+            }
+            case 3: {
+                error.setText("Email non valida");
+                throw new RuntimeException();
+            }
+            case 4: {
+                error.setText("Password non valida");
+                throw new RuntimeException();
+            }
+            case 5: {
+                error.setText("Data di nascita non valida");
+                throw new RuntimeException();
+            }
+            case 6: {
+                error.setText("Numero di telefono non valido");
+                throw new RuntimeException();
+            }
+            case 7: {
+                error.setText("Utente già registrato");
+                throw new RuntimeException();
+            }
         }
     }
 }

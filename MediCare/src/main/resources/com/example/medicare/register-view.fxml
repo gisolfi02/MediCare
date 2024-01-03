@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="fieldTelefono" fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="896.0" prefWidth="414.0" style="-fx-background-color: #2c3e50;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medicare.RegisterController">
+<AnchorPane id="fieldTelefono" fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="896.0" prefWidth="414.0" style="-fx-background-color: #435363;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medicare.RegisterController">
 
 
    <ImageView fitHeight="140.0" fitWidth="140.0" layoutX="137.0" layoutY="25.0">
@@ -23,7 +23,7 @@
    <TextField fx:id="fieldCognome" layoutX="88.0" layoutY="352.0" prefHeight="40.0" prefWidth="238.0" promptText="Cognome" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="504.0" />
    <TextField fx:id="fieldEmail" layoutX="88.0" layoutY="422.0" prefHeight="40.0" prefWidth="238.0" promptText="Email" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="434.0" />
    <TextField fx:id="fieldTelefono" layoutX="88.0" layoutY="632.0" prefHeight="40.0" prefWidth="238.0" promptText="Telefono" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="224.0" />
-   <Button fx:id="RegistratiButton" layoutX="147.0" layoutY="775.0" mnemonicParsing="false" onAction="#onRegistratiButtonClick" prefHeight="36.0" prefWidth="120.0" style="-fx-background-color: #404f5d;" text="Registrati" textFill="WHITE" AnchorPane.bottomAnchor="85.0">
+   <Button fx:id="RegistratiButton" layoutX="147.0" layoutY="775.0" mnemonicParsing="false" onAction="#onRegistratiButtonClick" prefHeight="36.0" prefWidth="120.0" style="-fx-background-color: #38444f;" text="Registrati" textFill="WHITE" AnchorPane.bottomAnchor="85.0">
       <cursor>
          <Cursor fx:constant="HAND" />
       </cursor></Button>
