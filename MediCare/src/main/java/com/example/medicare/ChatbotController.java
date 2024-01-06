@@ -1,5 +1,6 @@
 package com.example.medicare;
 
+
 import DataTier.MediCare.Utente.Utente;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,7 +14,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HomePageController {
+public class ChatbotController {
     @FXML
     private Button home;
     @FXML
@@ -23,7 +24,6 @@ public class HomePageController {
     private Scene scene;
     private Stage stage;
     private FXMLLoader fxmlLoader;
-
 
     static Utente utente;
 
@@ -52,19 +52,6 @@ public class HomePageController {
         Parent root = fxmlLoader.load();
         UserController userController = fxmlLoader.getController();
         userController.setUtente(utente);
-
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
-    protected void goToChatBot(ActionEvent event) throws IOException {
-        fxmlLoader = new FXMLLoader(Main.class.getResource("chatbot-view.fxml"));
-        Parent root = fxmlLoader.load();
-        ChatbotController chatbotController = fxmlLoader.getController();
-        chatbotController.setUtente(utente);
 
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
