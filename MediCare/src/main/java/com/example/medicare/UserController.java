@@ -32,14 +32,6 @@ public class UserController {
         stage.show();
     }
 
-    @FXML
-    protected void goToProfile(ActionEvent event) throws IOException {
-        fxmlLoader = new FXMLLoader(Main.class.getResource("user.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(fxmlLoader.load());
-        stage.setScene(scene);
-        stage.show();
-    }
 
     @FXML
     protected void doLogout(ActionEvent event) throws IOException {
