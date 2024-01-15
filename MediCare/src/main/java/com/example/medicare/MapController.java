@@ -13,19 +13,20 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HomePageController {
+
+public class MapController {
+
+    private Scene scene;
+    private Stage stage;
+    private FXMLLoader fxmlLoader;
+    static Utente utente;
+
+
     @FXML
     private Button home;
     @FXML
     private Button Profilo;
 
-
-    private Scene scene;
-    private Stage stage;
-    private FXMLLoader fxmlLoader;
-
-
-    static Utente utente;
 
     @FXML
     protected void initialize() {
@@ -36,7 +37,6 @@ public class HomePageController {
         Tooltip profiloTooltip = new Tooltip("Visualizza il tuo profilo");
         Tooltip.install(Profilo, profiloTooltip);
     }
-
     @FXML
     protected void goHome(ActionEvent event) throws IOException {
         fxmlLoader = new FXMLLoader(Main.class.getResource("HomePage.fxml"));
@@ -73,22 +73,9 @@ public class HomePageController {
     }
 
     @FXML
-    protected void goToAreaPrenotazione(ActionEvent event) throws IOException {
-        fxmlLoader = new FXMLLoader(Main.class.getResource("AreaPrenotazione-view.fxml"));
-        Parent root = fxmlLoader.load();
-        AreaPrenotazioneController areaPrenotazioneController = fxmlLoader.getController();
-        areaPrenotazioneController.setUtente(utente);
-
-
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-
-
     protected void setUtente(Utente utente){
-        HomePageController.utente = utente;
+        this.utente = utente;
+        account.setText("Ciao " + utente.getNome() + ", questa è la tua area riservata.");
     }
+
 }

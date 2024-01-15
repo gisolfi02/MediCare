@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane prefHeight="896.0" prefWidth="414.0" style="-fx-background-color: #36424e;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medicare.MapController">
+    <Pane layoutY="796.0" prefHeight="100.0" prefWidth="414.0" styleClass="customPane" stylesheets="@Style.css">
+        <children>
+            <Button fx:id="Home" layoutX="14.0" layoutY="20.0" mnemonicParsing="false" onAction="#goHome" prefHeight="55.0" prefWidth="55.0" styleClass="buttonCustomPane" stylesheets="@Style.css">
+                <graphic>
+                    <ImageView fitHeight="45.0" fitWidth="45.0">
+                        <image>
+                            <Image url="@Images/home-icon-silhouette.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Clicca per tornare alla Home" />
+                </tooltip>
+            </Button>
+            <Button fx:id="Profilo" layoutX="315.0" layoutY="18.0" mnemonicParsing="false" onAction="#goToProfile" prefHeight="55.0" prefWidth="55.0" styleClass="buttonCustomPane" stylesheets="Style.css">
+                <graphic>
+                    <ImageView fitHeight="45.0" fitWidth="45.0">
+                        <image>
+                            <Image url="@Images/user.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+                <tooltip>
+                    <Tooltip text="Visualizza il tuo profilo" />
+                </tooltip>
+            </Button>
+            <Label layoutX="97.0" layoutY="34.0" prefHeight="36.0" prefWidth="221.0" styleClass="labelCustomPane" stylesheets="@Style.css" text=" Benvenuto in MediCare">
+                <font>
+                    <Font size="20.0" />
+                </font></Label>
+        </children>
+    </Pane>
+    <Label alignment="CENTER" layoutX="69.0" layoutY="14.0" prefHeight="39.0" prefWidth="278.0" text="RICERCA" textAlignment="CENTER" textFill="WHITE" underline="true">
+        <font>
+            <Font name="Perpetua" size="40.0" />
+        </font>
+    </Label>
+    <Label fx:id="error" alignment="CENTER" layoutX="92.0" layoutY="705.0" prefHeight="26.0" prefWidth="229.0" textFill="RED">
+        <font>
+            <Font size="16.0" />
+        </font></Label>
+    <Button layoutX="13.0" layoutY="193.0" mnemonicParsing="false" styleClass="buttonCustomPane" stylesheets="@Style.css" />
+   <TextArea layoutX="14.0" layoutY="96.0" prefHeight="39.0" prefWidth="341.0" />
+   <Button layoutX="359.0" layoutY="96.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="40.0" style="-fx-background-color: None;">
+      <graphic>
+         <ImageView fitHeight="34.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@Images/iconaRicercaBianca.png" />
+            </image>
+         </ImageView>
+      </graphic></Button>
+   <WebView layoutX="15.0" layoutY="151.0" prefHeight="319.0" prefWidth="383.0" />
+   <ScrollPane layoutX="15.0" layoutY="489.0" prefHeight="319.0" prefWidth="383.0">
+     <content>
+       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="319.0" prefWidth="383.0" />
+     </content>
+   </ScrollPane>
+
+</AnchorPane>
