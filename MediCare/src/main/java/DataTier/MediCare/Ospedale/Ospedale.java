@@ -1,17 +1,17 @@
 package DataTier.MediCare.Ospedale;
 
 public class Ospedale {
-    private String email;
+    private int codice;
     private String nome;
     private String paese;
-    private String numero;
+    private String indirizzo;
 
-    public String getEmail() {
-        return email;
+    public int getCodice() {
+        return codice;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setCodice(int codice) {
+        this.codice = codice;
     }
 
     public String getNome() {
@@ -30,11 +30,11 @@ public class Ospedale {
         this.paese = paese;
     }
 
-    public String getNumero() {
-        return numero;
+    public String getIndirizzo() {
+        return indirizzo;
     }
 
-    public void setNumero(String numero) {
-        this.numero = numero;
+    public void setIndirizzo(String indirizzo) {
+        this.indirizzo = indirizzo;
     }
 }

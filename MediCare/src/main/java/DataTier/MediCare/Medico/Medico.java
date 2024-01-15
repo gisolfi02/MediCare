@@ -1,5 +1,6 @@
 package DataTier.MediCare.Medico;
 
+import java.time.LocalDate;
 import java.util.GregorianCalendar;
 
 public class Medico {
@@ -8,9 +9,9 @@ public class Medico {
     private String nome;
     private String cognome;
     private String email;
-    private GregorianCalendar dataDiNascita;
+    private LocalDate dataDiNascita;
     private String nomeReparto;
-    private String nomeOspedale;
+    private int idOspedale;
 
     public int getId() {
         return id;
@@ -44,11 +45,11 @@ public class Medico {
         this.email = email;
     }
 
-    public GregorianCalendar getDataDiNascita() {
+    public LocalDate getDataDiNascita() {
         return dataDiNascita;
     }
 
-    public void setDataDiNascita(GregorianCalendar dataDiNascita) {
+    public void setDataDiNascita(LocalDate dataDiNascita) {
         this.dataDiNascita = dataDiNascita;
     }
 
@@ -60,11 +61,11 @@ public class Medico {
         this.nomeReparto = nomeReparto;
     }
 
-    public String getNomeOspedale() {
-        return nomeOspedale;
+    public int getIdOspedale() {
+        return idOspedale;
     }
 
-    public void setNomeOspedale(String nomeOspedale) {
-        this.nomeOspedale = nomeOspedale;
+    public void setIdOspedale(int idOspedale) {
+        this.idOspedale = idOspedale;
     }
 }

@@ -7,7 +7,6 @@ public class Login {
 
     public Utente doLogin(String email, String password){
         UtenteDAO uDAO = new UtenteDAO();
-        Utente u = uDAO.doRetrieveByEmailPassword(email,password);
-        return u;
+        return uDAO.doRetrieveByEmailPassword(email,password);
     }
 }

@@ -59,6 +59,6 @@ public class ChatbotController {
         stage.show();
     }
     protected void setUtente(Utente utente){
-        this.utente = utente;
+        ChatbotController.utente = utente;
     }
 }

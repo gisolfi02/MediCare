@@ -44,7 +44,7 @@ public class UserController {
 
     @FXML
     protected void setUtente(Utente utente){
-        this.utente = utente;
+        UserController.utente = utente;
         account.setText("Ciao " + utente.getNome() + ", questa è la tua area riservata.");
     }
 }

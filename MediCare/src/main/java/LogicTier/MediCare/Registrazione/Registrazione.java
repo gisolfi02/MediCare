@@ -8,7 +8,7 @@ import java.time.LocalDate;
 
 public class Registrazione {
 
-    public int doRegistrazione(String nome, String cognome, String email, String password, String telefono, LocalDate dataDiNascita, Label error) {
+    public int doRegistrazione(String nome, String cognome, String email, String password, String telefono, LocalDate dataDiNascita) {
         Utente u = new Utente();
         UtenteDAO uDao = new UtenteDAO();
 

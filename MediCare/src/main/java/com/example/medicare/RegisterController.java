@@ -47,7 +47,7 @@ public class RegisterController {
         LocalDate dataDiNascita =  fieldDataDiNascita.getValue();
 
         Registrazione registrazione = new Registrazione();
-        int result = registrazione.doRegistrazione(nome,cognome,email,password,telefono,dataDiNascita,error);
+        int result = registrazione.doRegistrazione(nome,cognome,email,password,telefono,dataDiNascita);
 
         //il valore di ritorno di registrazione indica per quale motivo la registrazione non è andata a buon fine
         switch(result){

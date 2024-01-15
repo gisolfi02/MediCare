@@ -10,8 +10,7 @@ public class Prenotazione {
     private LocalTime ora;
     private String emailUtente;
     private int idMedico;
-    private String emailOspedale;
-
+    private int idOspedale;
 
 
     public int getCodice() {
@@ -54,11 +53,11 @@ public class Prenotazione {
         this.idMedico = idMedico;
     }
 
-    public String getEmailOspedale() {
-        return emailOspedale;
+    public int getIdOspedale() {
+        return idOspedale;
     }
 
-    public void setEmailOspedale(String emailOspedale) {
-        this.emailOspedale = emailOspedale;
+    public void setIdOspedale(int idOspedale) {
+        this.idOspedale = idOspedale;
     }
 }

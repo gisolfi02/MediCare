@@ -2,7 +2,7 @@ package DataTier.MediCare.Reparto;
 
 public class Reparto {
     private String nome;
-    private String emailOspedale;
+    private  int idOspedale;
     private int postiDisp;
     private int personale;
 
@@ -14,12 +14,12 @@ public class Reparto {
         this.nome = nome;
     }
 
-    public String getEmailOspedale() {
-        return emailOspedale;
+    public int getIdOspedale() {
+        return idOspedale;
     }
 
-    public void setEmailOspedale(String emailOspedale) {
-        this.emailOspedale = emailOspedale;
+    public void setIdOspedale(int idOspedale) {
+        this.idOspedale = idOspedale;
     }
 
     public int getPostiDisp() {

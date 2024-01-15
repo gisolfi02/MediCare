@@ -8,18 +8,11 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Tooltip;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HomePageController {
-    @FXML
-    private Button home;
-    @FXML
-    private Button Profilo;
-
-
+public class AreaPrenotazioneController {
     private Scene scene;
     private Stage stage;
     private FXMLLoader fxmlLoader;
@@ -29,12 +22,6 @@ public class HomePageController {
 
     @FXML
     protected void initialize() {
-        // Aggiungi i tooltip programmaticamente se necessario
-        Tooltip homeTooltip = new Tooltip("Clicca per tornare alla Home");
-        Tooltip.install(home, homeTooltip);
-
-        Tooltip profiloTooltip = new Tooltip("Visualizza il tuo profilo");
-        Tooltip.install(Profilo, profiloTooltip);
     }
 
     @FXML
@@ -60,11 +47,11 @@ public class HomePageController {
     }
 
     @FXML
-    protected void goToChatBot(ActionEvent event) throws IOException {
-        fxmlLoader = new FXMLLoader(Main.class.getResource("chatbot-view.fxml"));
+    protected void goToNuovaPrenotazione(ActionEvent event) throws IOException {
+        fxmlLoader = new FXMLLoader(Main.class.getResource("nuovaPrenotazione-view.fxml"));
         Parent root = fxmlLoader.load();
-        ChatbotController chatbotController = fxmlLoader.getController();
-        chatbotController.setUtente(utente);
+        NuovaPrenotazioneController nuovaPrenotazioneController = fxmlLoader.getController();
+        nuovaPrenotazioneController.setUtente(utente);
 
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -73,11 +60,9 @@ public class HomePageController {
     }
 
     @FXML
-    protected void goToAreaPrenotazione(ActionEvent event) throws IOException {
-        fxmlLoader = new FXMLLoader(Main.class.getResource("AreaPrenotazione-view.fxml"));
+    protected void goToStoricoPrenotazione(ActionEvent event) throws IOException {
+        fxmlLoader = new FXMLLoader(Main.class.getResource(".fxml"));
         Parent root = fxmlLoader.load();
-        AreaPrenotazioneController areaPrenotazioneController = fxmlLoader.getController();
-        areaPrenotazioneController.setUtente(utente);
 
 
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -86,6 +71,6 @@ public class HomePageController {
         stage.show();
     }
     protected void setUtente(Utente utente){
-        HomePageController.utente = utente;
+        AreaPrenotazioneController.utente = utente;
     }
 }
