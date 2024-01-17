@@ -4,15 +4,20 @@ import DataTier.MediCare.Medico.Medico;
 import DataTier.MediCare.Medico.MedicoDAO;
 import DataTier.MediCare.Ospedale.Ospedale;
 import DataTier.MediCare.Ospedale.OspedaleDAO;
+import DataTier.MediCare.Prenotazione.Prenotazione;
+import DataTier.MediCare.Prenotazione.PrenotazioneDAO;
 import DataTier.MediCare.Reparto.Reparto;
 import DataTier.MediCare.Reparto.RepartoDAO;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Prenotazione {
+public class PrenotazioneLogic {
     private OspedaleDAO ospedaleDAO = new OspedaleDAO();
-    private  RepartoDAO repartoDAO = new RepartoDAO();
+    private RepartoDAO repartoDAO = new RepartoDAO();
     private MedicoDAO medicoDAO = new MedicoDAO();
+    private PrenotazioneDAO prenotazioneDAO = new PrenotazioneDAO();
+    private Prenotazione prenotazione = new Prenotazione();
 
 
     public ArrayList<String> getReparti(String nomeOspedale){
@@ -47,5 +52,44 @@ public class Prenotazione {
             nomiMedici.add(nome);
         }
         return nomiMedici;
+    }
+
+    public int doPrenotazione(String nome, String cognome, String cf, LocalDate data, String ora, String emailUtente, String medico, String ospedale){
+        if(!nome.matches("([A-Z][a-z]+)") || nome.isBlank()){
+            return 1;
+        }
+        if (!cognome.matches("([A-Z][a-z']+)") || cognome.isBlank()){
+            return 2;
+        }
+        if(!cf.matches("[A-Z]{6}\\d{2}[A-Z]\\d{2}[A-Z]\\d{3}[A-Z]") || cf.isBlank()){
+            return 3;
+        }
+        if (data == null || data.isBefore(LocalDate.now())){
+            return 4;
+        }
+        if (ora == null){
+            return 5;
+        }
+        int idMedico = Integer.parseInt(medico.split("-")[1]);
+        int idOspedale = Integer.parseInt(ospedale.split("-")[1]);
+
+        prenotazione.setNome(nome);
+        prenotazione.setCognome(cognome);
+        prenotazione.setCf(cf);
+        prenotazione.setData(data);
+        prenotazione.setOra(ora);
+        prenotazione.setEmailUtente(emailUtente);
+        prenotazione.setIdMedico(idMedico);
+        prenotazione.setIdOspedale(idOspedale);
+
+        return 0;
+    }
+
+    public boolean salvaPrenotazione(Prenotazione prenotazione){
+        return prenotazioneDAO.doSave(prenotazione);
+    }
+
+    public Prenotazione getPrenotazione() {
+        return prenotazione;
     }
 }

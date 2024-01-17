@@ -1,18 +1,43 @@
 package DataTier.MediCare.Prenotazione;
 
-import java.time.LocalTime;
-import java.util.GregorianCalendar;
+
+import java.time.LocalDate;
 
 public class Prenotazione {
 
     private int codice;
-    private GregorianCalendar data;
-    private LocalTime ora;
+    private LocalDate data;
+    private String ora;
+    private String nome;
+    private String cognome;
+    private String cf;
     private String emailUtente;
     private int idMedico;
     private int idOspedale;
 
+    public String getNome() {
+        return nome;
+    }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCognome() {
+        return cognome;
+    }
+
+    public void setCognome(String cognome) {
+        this.cognome = cognome;
+    }
+
+    public String getCf() {
+        return cf;
+    }
+
+    public void setCf(String cf) {
+        this.cf = cf;
+    }
     public int getCodice() {
         return codice;
     }
@@ -21,19 +46,19 @@ public class Prenotazione {
         this.codice = codice;
     }
 
-    public GregorianCalendar getData() {
+    public LocalDate getData() {
         return data;
     }
 
-    public void setData(GregorianCalendar data) {
+    public void setData(LocalDate data) {
         this.data = data;
     }
 
-    public LocalTime getOra() {
+    public String getOra() {
         return ora;
     }
 
-    public void setOra(LocalTime ora) {
+    public void setOra(String ora) {
         this.ora = ora;
     }
 

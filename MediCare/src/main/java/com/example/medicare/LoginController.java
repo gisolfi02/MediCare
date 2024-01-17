@@ -1,7 +1,7 @@
 package com.example.medicare;
 
 import DataTier.MediCare.Utente.Utente;
-import LogicTier.MediCare.Login.Login;
+import LogicTier.MediCare.Login.LoginLogic;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -37,8 +37,8 @@ public class LoginController {
         String email = fieldEmail.getText();
         String password = fieldPassword.getText();
 
-        Login login = new Login();
-        Utente u = login.doLogin(email, password);
+        LoginLogic loginLogic = new LoginLogic();
+        Utente u = loginLogic.doLogin(email, password);
 
         if (u == null) {
             error.setText("Email o password errati");

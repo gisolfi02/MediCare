@@ -1,6 +1,6 @@
 package com.example.medicare;
 
-import LogicTier.MediCare.Registrazione.Registrazione;
+import LogicTier.MediCare.Registrazione.RegistrazioneLogic;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -46,8 +46,8 @@ public class RegisterController {
         String password = fieldPassword.getText();
         LocalDate dataDiNascita =  fieldDataDiNascita.getValue();
 
-        Registrazione registrazione = new Registrazione();
-        int result = registrazione.doRegistrazione(nome,cognome,email,password,telefono,dataDiNascita);
+        RegistrazioneLogic registrazioneLogic = new RegistrazioneLogic();
+        int result = registrazioneLogic.doRegistrazione(nome,cognome,email,password,telefono,dataDiNascita);
 
         //il valore di ritorno di registrazione indica per quale motivo la registrazione non è andata a buon fine
         switch(result){

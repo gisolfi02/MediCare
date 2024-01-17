@@ -1,7 +1,8 @@
 package com.example.medicare;
 
+import DataTier.MediCare.Prenotazione.Prenotazione;
 import DataTier.MediCare.Utente.Utente;
-import LogicTier.MediCare.Prenotazione.Prenotazione;
+import LogicTier.MediCare.Prenotazione.PrenotazioneLogic;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,17 +10,21 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class NuovaPrenotazioneController implements Initializable {
-    private Prenotazione prenotazione = new Prenotazione();
+    private PrenotazioneLogic prenotazioneLogic = new PrenotazioneLogic();
+
+
     @FXML
     private ChoiceBox<String> repartiBox;
     @FXML
@@ -35,6 +40,24 @@ public class NuovaPrenotazioneController implements Initializable {
     private Label repartiLabel;
     @FXML
     private Label medicoLabel;
+
+
+
+    @FXML
+    private Pane formPrenotazione;
+    @FXML
+    private TextField nomeField;
+    @FXML
+    private TextField cognomeField;
+    @FXML
+    private TextField cfField;
+    @FXML
+    private DatePicker dataPicker;
+    @FXML
+    private ChoiceBox<String> oraBox;
+    @FXML
+    private Label errore;
+
 
     private Scene scene;
     private Stage stage;
@@ -76,14 +99,14 @@ public class NuovaPrenotazioneController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
-        ArrayList<String> comuni = prenotazione.getComuni();
+        ArrayList<String> comuni = prenotazioneLogic.getComuni();
         comuniBox.getItems().addAll(comuni);
         comuniBox.setOnAction(this::mostraOspedali);
 
     }
 
     private void mostraOspedali(ActionEvent event){
-        ArrayList<String> ospedali = prenotazione.getOspedali(comuniBox.getValue());
+        ArrayList<String> ospedali = prenotazioneLogic.getOspedali(comuniBox.getValue());
         ospedaliBox.getItems().addAll(ospedali);
         ospedaliLabel.setVisible(true);
         ospedaliBox.setVisible(true);
@@ -91,7 +114,7 @@ public class NuovaPrenotazioneController implements Initializable {
     }
 
     private void mostraReparti(ActionEvent event){
-        ArrayList<String> reparti = prenotazione.getReparti(ospedaliBox.getValue());
+        ArrayList<String> reparti = prenotazioneLogic.getReparti(ospedaliBox.getValue());
         repartiBox.getItems().addAll(reparti);
         repartiLabel.setVisible(true);
         repartiBox.setVisible(true);
@@ -99,10 +122,69 @@ public class NuovaPrenotazioneController implements Initializable {
     }
 
     private void mostraMedici(ActionEvent event) {
-        ArrayList<String> medici = prenotazione.getMedici(repartiBox.getValue(),ospedaliBox.getValue());
+        ArrayList<String> medici = prenotazioneLogic.getMedici(repartiBox.getValue(),ospedaliBox.getValue());
         medicoBox.getItems().addAll(medici);
         medicoLabel.setVisible(true);
         medicoBox.setVisible(true);
+        medicoBox.setOnAction(this::mostraFrom);
     }
 
+    private void mostraFrom(ActionEvent event) {
+        String[] ore = {"09-10", "10-11", "11-12", "12-13", "13-14", "14-15", "15-16", "16-17", "17-18"};
+        oraBox.getItems().addAll(ore);
+        formPrenotazione.setVisible(true);
+    }
+
+    @FXML
+    private void prenota(ActionEvent event) throws IOException {
+        String nome = nomeField.getText();
+        String cognome = cognomeField.getText();
+        String cf = cfField.getText();
+        LocalDate data = dataPicker.getValue();
+        String ora = oraBox.getValue();
+
+        int result = prenotazioneLogic.doPrenotazione(nome, cognome, cf, data, ora, utente.getEmail(), medicoBox.getValue(), ospedaliBox.getValue());
+        switch (result) {
+            case 1: {
+                errore.setText("Nome non valido");
+                throw new RuntimeException();
+            }
+            case 2:{
+                errore.setText("Cognome non valido");
+                throw new RuntimeException();
+            }
+            case 3: {
+                errore.setText("Codice Fiscale non valido");
+                throw new RuntimeException();
+            }
+            case 4: {
+                errore.setText("Data non valida");
+                throw new RuntimeException();
+            }
+            case 5: {
+                errore.setText("Ora non valida");
+                throw new RuntimeException();
+            }
+        }
+        Prenotazione prenotazione = prenotazioneLogic.getPrenotazione();
+
+        fxmlLoader = new FXMLLoader(Main.class.getResource("riepilogoPrenotazione-view.fxml"));
+        Parent root = fxmlLoader.load();
+        RiepilogoPrenotazioneController riepilogoPrenotazioneController = fxmlLoader.getController();
+        riepilogoPrenotazioneController.setUtente(utente);
+        riepilogoPrenotazioneController.riepilogo(prenotazione,medicoBox.getValue(),repartiBox.getValue(),ospedaliBox.getValue(),comuniBox.getValue());
+
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    protected void upperCase(KeyEvent event){
+        cfField.setTextFormatter(new TextFormatter<>((change) -> {
+            change.setText(change.getText().toUpperCase());
+            return change;
+        }));
+    }
 }

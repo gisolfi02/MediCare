@@ -2,11 +2,10 @@ package LogicTier.MediCare.Registrazione;
 
 import DataTier.MediCare.Utente.Utente;
 import DataTier.MediCare.Utente.UtenteDAO;
-import javafx.scene.control.Label;
 
 import java.time.LocalDate;
 
-public class Registrazione {
+public class RegistrazioneLogic {
 
     public int doRegistrazione(String nome, String cognome, String email, String password, String telefono, LocalDate dataDiNascita) {
         Utente u = new Utente();
