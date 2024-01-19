@@ -8,9 +8,11 @@ import DataTier.MediCare.Prenotazione.Prenotazione;
 import DataTier.MediCare.Prenotazione.PrenotazioneDAO;
 import DataTier.MediCare.Reparto.Reparto;
 import DataTier.MediCare.Reparto.RepartoDAO;
+import DataTier.MediCare.Utente.Utente;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 public class PrenotazioneLogic {
     private OspedaleDAO ospedaleDAO = new OspedaleDAO();
@@ -20,27 +22,8 @@ public class PrenotazioneLogic {
     private Prenotazione prenotazione = new Prenotazione();
 
 
-    public ArrayList<String> getReparti(String nomeOspedale){
-        String codice = nomeOspedale.split("-")[1];
-        ArrayList<Reparto> reparti =  repartoDAO.doRetriveRepartiByCodice(codice);
-        ArrayList<String> nomiReparto = new ArrayList<>();
-        for(Reparto reparto : reparti){
-            nomiReparto.add(reparto.getNome());
-        }
-        return nomiReparto;
-    }
-    public ArrayList<String> getComuni(){
-        return ospedaleDAO.doRetriveComuni();
-    }
-
-    public ArrayList<String> getOspedali(String comune){
-        ArrayList<Ospedale> ospedali = ospedaleDAO.doRetriveOspedaleByComune(comune);
-        ArrayList<String> nomiOspedali = new ArrayList<>();
-        for(Ospedale ospedale : ospedali){
-            String nome = ospedale.getNome() + "-" + ospedale.getCodice();
-            nomiOspedali.add(nome);
-        }
-        return nomiOspedali;
+    public Medico getMedico(int id) {
+        return medicoDAO.doRetriveById(id);
     }
 
     public ArrayList<String> getMedici(String reparto, String ospedale){
@@ -53,6 +36,50 @@ public class PrenotazioneLogic {
         }
         return nomiMedici;
     }
+
+
+    public ArrayList<String> getReparti(String nomeOspedale){
+        String codice = nomeOspedale.split("-")[1];
+        ArrayList<Reparto> reparti =  repartoDAO.doRetriveRepartiByCodice(codice);
+        ArrayList<String> nomiReparto = new ArrayList<>();
+        for(Reparto reparto : reparti){
+            nomiReparto.add(reparto.getNome());
+        }
+        return nomiReparto;
+    }
+
+
+    public Ospedale getOspedale(int id){
+        return ospedaleDAO.doRetrieveById(id);
+    }
+
+    public ArrayList<String> getOspedali(String comune){
+        ArrayList<Ospedale> ospedali = ospedaleDAO.doRetriveOspedaleByComune(comune);
+        ArrayList<String> nomiOspedali = new ArrayList<>();
+        for(Ospedale ospedale : ospedali){
+            String nome = ospedale.getNome() + "-" + ospedale.getCodice();
+            nomiOspedali.add(nome);
+        }
+        return nomiOspedali;
+    }
+
+
+    public ArrayList<String> getComuni(){
+        return ospedaleDAO.doRetriveComuni();
+    }
+
+
+    public ArrayList<String> getOre(LocalDate data, String medico){
+        int idMedico = Integer.parseInt(medico.split("-")[1]);
+        ArrayList<String> ore = new ArrayList<>();
+        ore.addAll(List.of(new String[]{"09-10", "10-11", "11-12", "12-13", "13-14", "14-15", "15-16", "16-17", "17-18"}));
+        ArrayList<String> oreNonDisp = prenotazioneDAO.doRetriveOreDisp(data,idMedico);
+        for (String ora : oreNonDisp){
+            ore.remove(ora);
+        }
+        return ore;
+    }
+
 
     public int doPrenotazione(String nome, String cognome, String cf, LocalDate data, String ora, String emailUtente, String medico, String ospedale){
         if(!nome.matches("([A-Z][a-z]+)") || nome.isBlank()){
@@ -85,11 +112,18 @@ public class PrenotazioneLogic {
         return 0;
     }
 
+
     public boolean salvaPrenotazione(Prenotazione prenotazione){
         return prenotazioneDAO.doSave(prenotazione);
     }
 
+
     public Prenotazione getPrenotazione() {
         return prenotazione;
+    }
+
+
+    public ArrayList<Prenotazione> getPrenotazioni(Utente u){
+        return prenotazioneDAO.doRetrivePrenotazioniByUtente(u);
     }
 }

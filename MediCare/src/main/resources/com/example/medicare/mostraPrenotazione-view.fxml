@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="896.0" prefWidth="414.0" style="-fx-background-color: #435363;" styleClass="customAnchorPane" stylesheets="Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medicare.MostraPrenotazioneController">
+   <Pane layoutY="796.0" prefHeight="100.0" prefWidth="414.0" styleClass="customPane" stylesheets="@Style.css">
+      <children>
+         <Button fx:id="Home" layoutX="14.0" layoutY="20.0" mnemonicParsing="false" onAction="#goHome" prefHeight="55.0" prefWidth="55.0" styleClass="buttonCustomPane" stylesheets="@Style.css">
+            <graphic>
+               <ImageView fitHeight="45.0" fitWidth="45.0">
+                  <image>
+                     <Image url="@Images/home-icon-silhouette.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+            <tooltip>
+               <Tooltip text="Clicca per tornare alla Home" />
+            </tooltip>
+         </Button>
+         <Button fx:id="Profilo" layoutX="315.0" layoutY="18.0" mnemonicParsing="false" onAction="#goToProfile" prefHeight="55.0" prefWidth="55.0" styleClass="buttonCustomPane" stylesheets="Style.css">
+            <graphic>
+               <ImageView fitHeight="45.0" fitWidth="45.0">
+                  <image>
+                     <Image url="@Images/user.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+            <tooltip>
+               <Tooltip text="Visualizza il tuo profilo" />
+            </tooltip>
+         </Button>
+         <Label layoutX="97.0" layoutY="34.0" prefHeight="36.0" prefWidth="221.0" styleClass="labelCustomPane" stylesheets="@Style.css" text=" Benvenuto in MediCare">
+            <font>
+               <Font size="20.0" />
+            </font></Label>
+      </children>
+   </Pane>
+   <Label fx:id="prenotazioneLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="7.0" layoutY="50.0" prefHeight="59.0" prefWidth="400.0" text="Prenotazione N.">
+      <font>
+         <Font size="41.0" />
+      </font>
+   </Label>
+   <Label fx:id="nomeLabel" layoutX="26.0" layoutY="150.0" prefHeight="30.0" prefWidth="366.0" text="Nome Paziente:">
+      <font>
+         <Font size="20.0" />
+      </font>
+   </Label>
+   <Label fx:id="cognomeLabel" layoutX="26.0" layoutY="213.0" prefHeight="30.0" prefWidth="366.0" text="Cognome Paziente:">
+      <font>
+         <Font size="20.0" />
+      </font>
+   </Label>
+   <Label fx:id="cfLabel" layoutX="26.0" layoutY="276.0" prefHeight="30.0" prefWidth="366.0" text="CF Paziente:">
+      <font>
+         <Font size="20.0" />
+      </font>
+   </Label>
+   <Label fx:id="dataLabel" layoutX="26.0" layoutY="339.0" prefHeight="30.0" prefWidth="366.0" text="Data Prenotazione:">
+      <font>
+         <Font size="20.0" />
+      </font>
+   </Label>
+   <Label fx:id="oraLabel" layoutX="26.0" layoutY="402.0" prefHeight="30.0" prefWidth="366.0" text="Ora Prenotazione:">
+      <font>
+         <Font size="20.0" />
+      </font>
+   </Label>
+   <Label fx:id="medicoLabel" layoutX="26.0" layoutY="465.0" prefHeight="30.0" prefWidth="366.0" text="Medico:">
+      <font>
+         <Font size="20.0" />
+      </font>
+   </Label>
+   <Label fx:id="repartoLabel" layoutX="26.0" layoutY="528.0" prefHeight="30.0" prefWidth="366.0" text="Reparto:">
+      <font>
+         <Font size="20.0" />
+      </font>
+   </Label>
+   <Label fx:id="ospedaleLabel" alignment="TOP_LEFT" layoutX="26.0" layoutY="591.0" prefHeight="82.0" prefWidth="366.0" text="Ospedale:" wrapText="true">
+      <font>
+         <Font size="20.0" />
+      </font>
+   </Label>
+   <Label fx:id="comuneLabel" layoutX="26.0" layoutY="676.0" prefHeight="30.0" prefWidth="373.0" text="Comune:">
+      <font>
+         <Font size="20.0" />
+      </font>
+   </Label>
+   <Button layoutX="7.0" layoutY="735.0" mnemonicParsing="false" onAction="#goToStoricoPrenotazione" prefHeight="47.0" prefWidth="48.0" styleClass="buttonCustomPane" stylesheets="@Style.css">
+      <graphic>
+         <ImageView fitHeight="29.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+            <image>
+               <Image url="@Images/freccia.png" />
+            </image>
+         </ImageView>
+      </graphic>
+   </Button>
+</AnchorPane>

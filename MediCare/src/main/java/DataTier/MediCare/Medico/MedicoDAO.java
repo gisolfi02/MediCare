@@ -32,4 +32,26 @@ public class MedicoDAO {
             throw new RuntimeException(e);
         }
     }
+
+    public Medico doRetriveById(int id){
+        try(Connection con = ConPool.getConnection()) {
+            PreparedStatement ps = con.prepareStatement("SELECT id,nome,cognome,email,DDN,nomeReparto,idOspedale from Medico WHERE id=?");
+            ps.setInt(1,id);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()){
+                Medico medico = new Medico();
+                medico.setId(rs.getInt(1));
+                medico.setNome(rs.getString(2));
+                medico.setCognome(rs.getString(3));
+                medico.setEmail(rs.getString(4));
+                medico.setDataDiNascita(rs.getDate(5).toLocalDate());
+                medico.setNomeReparto(rs.getString(6));
+                medico.setIdOspedale(rs.getInt(7));
+                return medico;
+            }
+            return null;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

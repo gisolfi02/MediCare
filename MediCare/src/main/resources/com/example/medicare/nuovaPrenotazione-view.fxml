@@ -76,7 +76,7 @@
          <Label layoutX="129.0" layoutY="167.0" text="Data Prenotazione:" />
          <DatePicker fx:id="dataPicker" layoutX="104.0" layoutY="184.0" prefHeight="25.0" prefWidth="150.0" />
          <Label layoutX="131.0" layoutY="220.0" text="Ora Prenotazione:" />
-         <ChoiceBox fx:id="oraBox" layoutX="103.0" layoutY="237.0" prefWidth="150.0" />
+         <ChoiceBox fx:id="oraBox" layoutX="103.0" layoutY="237.0" onMousePressed="#mostraOra" prefWidth="150.0" />
          <Button fx:id="invia" layoutX="152.0" layoutY="303.0" mnemonicParsing="false" onAction="#prenota" text="Prenota " />
          <Label fx:id="errore" alignment="CENTER" layoutX="82.0" layoutY="277.0" prefHeight="17.0" prefWidth="200.0" textFill="RED" />
       </children>

@@ -3,6 +3,8 @@ package com.example.medicare;
 import DataTier.MediCare.Prenotazione.Prenotazione;
 import DataTier.MediCare.Utente.Utente;
 import LogicTier.MediCare.Prenotazione.PrenotazioneLogic;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +14,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -19,6 +22,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class NuovaPrenotazioneController implements Initializable {
@@ -107,7 +111,9 @@ public class NuovaPrenotazioneController implements Initializable {
 
     private void mostraOspedali(ActionEvent event){
         ArrayList<String> ospedali = prenotazioneLogic.getOspedali(comuniBox.getValue());
-        ospedaliBox.getItems().addAll(ospedali);
+        ObservableList<String> listaOspedali = FXCollections.observableArrayList(ospedali);
+        ospedaliBox.getItems().removeAll();
+        ospedaliBox.setItems(listaOspedali);
         ospedaliLabel.setVisible(true);
         ospedaliBox.setVisible(true);
         ospedaliBox.setOnAction(this::mostraReparti);
@@ -115,7 +121,8 @@ public class NuovaPrenotazioneController implements Initializable {
 
     private void mostraReparti(ActionEvent event){
         ArrayList<String> reparti = prenotazioneLogic.getReparti(ospedaliBox.getValue());
-        repartiBox.getItems().addAll(reparti);
+        ObservableList<String> listaReparti = FXCollections.observableArrayList(reparti);
+        repartiBox.setItems(listaReparti);
         repartiLabel.setVisible(true);
         repartiBox.setVisible(true);
         repartiBox.setOnAction(this::mostraMedici);
@@ -123,15 +130,14 @@ public class NuovaPrenotazioneController implements Initializable {
 
     private void mostraMedici(ActionEvent event) {
         ArrayList<String> medici = prenotazioneLogic.getMedici(repartiBox.getValue(),ospedaliBox.getValue());
-        medicoBox.getItems().addAll(medici);
+        ObservableList<String> listaMedici = FXCollections.observableArrayList(medici);
+        medicoBox.setItems(listaMedici);
         medicoLabel.setVisible(true);
         medicoBox.setVisible(true);
         medicoBox.setOnAction(this::mostraFrom);
     }
 
     private void mostraFrom(ActionEvent event) {
-        String[] ore = {"09-10", "10-11", "11-12", "12-13", "13-14", "14-15", "15-16", "16-17", "17-18"};
-        oraBox.getItems().addAll(ore);
         formPrenotazione.setVisible(true);
     }
 
@@ -186,5 +192,12 @@ public class NuovaPrenotazioneController implements Initializable {
             change.setText(change.getText().toUpperCase());
             return change;
         }));
+    }
+
+    @FXML
+    protected void mostraOra(MouseEvent event){
+        ArrayList<String> ore = prenotazioneLogic.getOre(dataPicker.getValue(),medicoBox.getValue());
+        ObservableList oreDisp = FXCollections.observableArrayList(ore);
+        oraBox.setItems(oreDisp);
     }
 }

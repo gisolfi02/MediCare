@@ -7,9 +7,10 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="896.0" prefWidth="414.0" style="-fx-background-color: #435363;" styleClass="customAnchorPane" stylesheets="Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medicare.AreaPrenotazioneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="896.0" prefWidth="414.0" style="-fx-background-color: #435363;" styleClass="customAnchorPane" stylesheets="Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medicare.StoricoPrenotazioniController">
    <Pane layoutY="796.0" prefHeight="100.0" prefWidth="414.0" styleClass="customPane" stylesheets="@Style.css">
       <children>
          <Button fx:id="Home" layoutX="14.0" layoutY="20.0" mnemonicParsing="false" onAction="#goHome" prefHeight="55.0" prefWidth="55.0" styleClass="buttonCustomPane" stylesheets="@Style.css">
@@ -42,36 +43,5 @@
             </font></Label>
       </children>
    </Pane>
-
-   <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="107.0" layoutY="49.0">
-      <image>
-         <Image url="@Images/LogoMedicare.png" />
-      </image>
-   </ImageView>
-
-   <Button layoutX="74.0" layoutY="408.0" mnemonicParsing="false" onAction="#goToStoricoPrenotazione" prefHeight="80.0" prefWidth="291.0" stylesheets="@Style.css" text="  Storico Prenotazioni">
-      <graphic>
-         <ImageView fitHeight="74.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-               <Image url="@Images/icons8-orologio-50.png" />
-            </image>
-         </ImageView>
-      </graphic>
-   </Button>
-
-   <Button layoutX="74.0" layoutY="572.0" mnemonicParsing="false" onAction="#goToNuovaPrenotazione" prefHeight="80.0" prefWidth="291.0" stylesheets="@Style.css" text=" Nuova Prenotazione">
-      <graphic>
-         <ImageView fitHeight="74.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-               <Image url="@Images/icons8-più-24.png" />
-            </image>
-         </ImageView>
-      </graphic>
-   </Button>
-
-   <Label layoutX="152.0" layoutY="207.0" styleClass="logoLabel" stylesheets="@Style.css" text="MediCare">
-      <font>
-         <Font name="Book Antiqua" size="12.0" />
-      </font>
-   </Label>
+   <VBox fx:id="container" alignment="TOP_CENTER" layoutX="16.0" layoutY="11.0" prefHeight="777.0" prefWidth="382.0" spacing="2.0" style="-fx-border-color: black;" stylesheets="@Style.css" />
 </AnchorPane>

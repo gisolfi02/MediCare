@@ -23,21 +23,6 @@ public class MapController {
 
 
     @FXML
-    private Button home;
-    @FXML
-    private Button Profilo;
-
-
-    @FXML
-    protected void initialize() {
-        // Aggiungi i tooltip programmaticamente se necessario
-        Tooltip homeTooltip = new Tooltip("Clicca per tornare alla Home");
-        Tooltip.install(home, homeTooltip);
-
-        Tooltip profiloTooltip = new Tooltip("Visualizza il tuo profilo");
-        Tooltip.install(Profilo, profiloTooltip);
-    }
-    @FXML
     protected void goHome(ActionEvent event) throws IOException {
         fxmlLoader = new FXMLLoader(Main.class.getResource("HomePage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -59,23 +44,10 @@ public class MapController {
         stage.show();
     }
 
-    @FXML
-    protected void goToChatBot(ActionEvent event) throws IOException {
-        fxmlLoader = new FXMLLoader(Main.class.getResource("chatbot-view.fxml"));
-        Parent root = fxmlLoader.load();
-        ChatbotController chatbotController = fxmlLoader.getController();
-        chatbotController.setUtente(utente);
-
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
+    /*@FXML
     protected void setUtente(Utente utente){
         this.utente = utente;
         account.setText("Ciao " + utente.getNome() + ", questa è la tua area riservata.");
-    }
+    }*/
 
 }

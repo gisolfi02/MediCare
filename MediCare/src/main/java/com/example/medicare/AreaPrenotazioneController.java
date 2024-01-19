@@ -61,9 +61,10 @@ public class AreaPrenotazioneController {
 
     @FXML
     protected void goToStoricoPrenotazione(ActionEvent event) throws IOException {
-        fxmlLoader = new FXMLLoader(Main.class.getResource(".fxml"));
+        fxmlLoader = new FXMLLoader(Main.class.getResource("storicoPrenotazione-view.fxml"));
         Parent root = fxmlLoader.load();
-
+        StoricoPrenotazioniController storicoPrenotazioniController = fxmlLoader.getController();
+        storicoPrenotazioniController.setUtente(utente);
 
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);

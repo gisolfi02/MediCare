@@ -42,4 +42,23 @@ public class OspedaleDAO {
             throw new RuntimeException(e);
         }
     }
+
+    public Ospedale doRetrieveById(int id){
+        try(Connection con = ConPool.getConnection()){
+            PreparedStatement ps = con.prepareStatement("SELECT codiceStruttura,nome,indirizzo,paese FROM Ospedale WHERE codiceStruttura=?");
+            ps.setInt(1,id);
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()){
+                Ospedale ospedale = new Ospedale();
+                ospedale.setCodice(rs.getInt(1));
+                ospedale.setNome(rs.getString(2));
+                ospedale.setIndirizzo(rs.getString(3));
+                ospedale.setPaese(rs.getString(4));
+                return ospedale;
+            }
+            return null;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
