@@ -17,16 +17,16 @@
       </image>
    </ImageView>
 
-   <Label layoutX="182.0" layoutY="200.0" styleClass="logoLabel" text="Medicare">
+   <Label layoutX="152.0" layoutY="207.0" styleClass="logoLabel" stylesheets="@Style.css" text="MediCare">
       <font>
          <Font name="Book Antiqua" size="12.0" />
       </font>
    </Label>
    <Pane layoutY="796.0" prefHeight="100.0" prefWidth="414.0" styleClass="customPane" stylesheets="@Style.css">
       <children>
-         <Button fx:id="Home" layoutX="14.0" layoutY="5.0" mnemonicParsing="false" onAction="#goHome" prefHeight="90.0" prefWidth="90.0" styleClass="buttonCustomPane" stylesheets="@Style.css">
+         <Button fx:id="Home" layoutX="14.0" layoutY="20.0" mnemonicParsing="false" onAction="#goHome" prefHeight="55.0" prefWidth="55.0" styleClass="buttonCustomPane" stylesheets="@Style.css">
             <graphic>
-               <ImageView fitHeight="60.0" fitWidth="60.0">
+               <ImageView fitHeight="45.0" fitWidth="45.0">
                   <image>
                      <Image url="@Images/home-icon-silhouette.png" />
                   </image>
@@ -36,9 +36,9 @@
                <Tooltip text="Clicca per tornare alla Home" />
             </tooltip>
          </Button>
-         <Button fx:id="Profilo" layoutX="298.0" layoutY="6.0" mnemonicParsing="false" prefHeight="90.0" prefWidth="90.0" styleClass="buttonCustomPane" stylesheets="@Style.css">
+         <Button fx:id="Profilo" layoutX="315.0" layoutY="18.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="55.0" styleClass="buttonCustomPane" stylesheets="@Style.css">
             <graphic>
-               <ImageView fitHeight="60.0" fitWidth="60.0">
+               <ImageView fitHeight="45.0" fitWidth="45.0">
                   <image>
                      <Image url="@Images/user.png" />
                   </image>
@@ -48,7 +48,7 @@
                <Tooltip text="Visualizza il tuo profilo" />
             </tooltip>
          </Button>
-         <Label alignment="CENTER" layoutX="122.0" layoutY="33.0" prefHeight="36.0" prefWidth="171.0" styleClass="text" stylesheets="@Style.css" text=" Benvenuto in MediCare" />
+         <Label alignment="CENTER" layoutX="97.0" layoutY="34.0" prefHeight="36.0" prefWidth="221.0" styleClass="labelCustomPane" stylesheets="@Style.css" text=" Benvenuto in MediCare" />
       </children>
    </Pane>
    <Label fx:id="account" alignment="CENTER" contentDisplay="CENTER" layoutX="43.0" layoutY="326.0" prefHeight="90.0" prefWidth="340.0" wrapText="true">
@@ -56,5 +56,5 @@
          <Font name="Dubai Regular" size="20.0" />
       </font>
    </Label>
-   <Button layoutX="145.0" layoutY="529.0" mnemonicParsing="false" onAction="#doLogout" prefHeight="36.0" prefWidth="123.0" style="-fx-background-color: #38444FFF; -fx-background-radius: 50;" text="Esci" textFill="WHITE" />
+   <Button layoutX="145.0" layoutY="531.0" mnemonicParsing="false" onAction="#doLogout" prefHeight="36.0" prefWidth="123.0" stylesheets="@Style.css" text="Esci" textFill="WHITE" />
 </AnchorPane>
