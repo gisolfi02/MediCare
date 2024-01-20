@@ -73,4 +73,31 @@ public class PrenotazioneDAO {
             throw new RuntimeException(e);
         }
     }
+
+    public Prenotazione doRetrieveByCode(int code){
+        try(Connection con = ConPool.getConnection()) {
+            PreparedStatement ps = con.prepareStatement("SELECT codice,data,ora,nomePaziente,cognomePaziente,codiceFiscalePaziente,emailUtente,idMedico,idOspedale FROM Prenotazione where codice=?");
+            ps.setInt(1,code);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                Prenotazione prenotazione = new Prenotazione();
+                prenotazione.setCodice(rs.getInt(1));
+                prenotazione.setData(rs.getDate(2).toLocalDate());
+                prenotazione.setOra(rs.getString(3));
+                prenotazione.setNome(rs.getString(4));
+                prenotazione.setCognome(rs.getString(5));
+                prenotazione.setCf(rs.getString(6));
+                prenotazione.setEmailUtente(rs.getString(7));
+                prenotazione.setIdMedico(rs.getInt(8));
+                prenotazione.setIdOspedale(rs.getInt(9));
+                return prenotazione;
+            }else {
+                return null;
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

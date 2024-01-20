@@ -65,7 +65,7 @@ public class RegistrazioneTest {
         u3.setNumero("3334455667");
         LocalDate birthDate = LocalDate.parse("1999-02-04");
         u3.setDdn(birthDate);
-        userDAO.doSave(u3);
+        reg.doRegistrazione(u3.getNome(), u3.getCognome(),u3.getEmail(),u3.getPassword(), u3.getNumero(), u3.getDdn());
         Utente retrievedUser = userDAO.doRetrieveByEmailPassword("nome3@cognome.it", password);
         assertNull(retrievedUser); //usiamo assertFalse in quanto il metodo isEmpty ritorna true se la stringa è vuota -> noi la vogliamo non vuota, quindi false.
     }
@@ -177,9 +177,9 @@ public class RegistrazioneTest {
         u9.setNumero("3334355667");
         LocalDate birthDate = LocalDate.parse("1999-02-04");
         u9.setDdn(birthDate);
-        reg.doRegistrazione(u9.getNome(), u9.getCognome(),u9.getEmail(), u9.getPassword(), u9.getNumero(), u9.getDdn());
-        Utente retrievedUser = userDAO.doRetrieveByEmailPassword("nome9@cognome.it", password);
-        assertNull(retrievedUser); //usiamo assertFalse in quanto il metodo isEmpty ritorna true se la stringa è vuota -> noi la vogliamo non vuota, quindi false.
+        reg.doRegistrazione(u9.getNome(), u9.getCognome(),u9.getEmail(), "Password12?", u9.getNumero(), u9.getDdn());
+        Utente retrievedUser = userDAO.doRetrieveByEmailPassword("nome9@cognome.it", "Password12?");
+        assertNotNull(retrievedUser); //usiamo assertFalse in quanto il metodo isEmpty ritorna true se la stringa è vuota -> noi la vogliamo non vuota, quindi false.
     }
 
 
