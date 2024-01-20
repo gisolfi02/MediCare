@@ -11,6 +11,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier, _tree
 from sklearn.metrics import precision_score, classification_report
+import sys
+
 
 translator = Translator()
 
@@ -19,7 +21,7 @@ warnings.filterwarnings("ignore", category=UserWarning)
 
 
 # Carico i dataset di training e testing
-training_set = pd.read_csv('Data/Training.csv')
+training_set = pd.read_csv('Datasets/Training.csv')
 
 
 # prendo le colonne del training set
@@ -122,9 +124,9 @@ def getprecautionDict():
 
 # Ottengo le informazioni del pazione
 def getInfo():
-    print("\nCiao!\nSono MediAI, un bot intelligente che aiuta per capire cosa potresti avere.\nCome ti chiami?\t")
+    print("\nCiao!\nSono MediAI, un bot intelligente che aiuta per capire cosa potresti avere. Come ti chiami? -\t")
     name = input("")
-    print("Ciao, " + name + ".")
+    print("Ciao, " + name + ".-")
 
 
 # Cerco un sintomo specifico all'interno di una lista di nomi di sintomi
@@ -142,7 +144,7 @@ def check_pattern(dis_list, inp):
 
 #Effetuo una seconda previsione basata sui sintomi specifici forniti come input
 def sec_predict(symptoms_exp):
-    df = pd.read_csv('Data/Training.csv')
+    df = pd.read_csv('Datasets/Training.csv')
     X = df.iloc[:,:-1]
     y = df['prognosis']
 
@@ -197,7 +199,7 @@ def print_disease(node):
 
 
 #Funzione core del progetto
-def tree_to_code(tree, feature_names):
+def tree_to_code(tree, feature_names, test):
     global num
     tree_ = tree.tree_
     feature_name =[
@@ -210,7 +212,15 @@ def tree_to_code(tree, feature_names):
 
     while True:
         print("Che sintomo stai riscontrando?\t")
-        disease_input = input("")
+        while True:
+            disease_input = input("")
+            if disease_input != "":
+                break
+            else:
+                print("Sintomo non valido, inserisci un sintomo valido!")
+                if test == 1:
+                    return 0
+
         disease_input.replace(" ", "_")
         conf, cnf_dis = check_pattern(chk_dis, translator.translate(disease_input, src="it").text)
         if conf == 1:
@@ -226,6 +236,8 @@ def tree_to_code(tree, feature_names):
             break
         else:
             print("Inserisci un sintomo valido.")
+            if test == 1:
+                return -1
 
     while True:
         try:
@@ -290,4 +302,4 @@ if __name__ == '__main__':
     getDescription()
     getprecautionDict()
     getInfo()
-    tree_to_code(classifier, columns)
+    tree_to_code(classifier, columns,0)
