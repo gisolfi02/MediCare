@@ -5,6 +5,9 @@ import DataTier.MediCare.Ospedale.OspedaleDAO;
 
 import java.util.ArrayList;
 
+/**
+ * Classe che si occupa della logica di ricerca degli ospedali
+ */
 public class CercaOspedaliLogic {
 
     /**
