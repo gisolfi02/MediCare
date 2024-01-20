@@ -5,8 +5,17 @@ import DataTier.MediCare.ConPool;
 import java.sql.*;
 import java.time.LocalDate;
 
+/**
+ * La classe UtenteDAO è la classe che si occupa di accedere al database e estrarre o salvare le informazioni relative ad un utente.
+ */
 public class UtenteDAO {
 
+    /**
+     * Metodo che si occupa di accedere al database e memorizzare le informazioni relative all'utente.
+     *
+     * @param u  Utente che deve essere memorizzato
+     * @return valore che indica se il salvataggio è avvenuto con successo o meno.
+     */
     public boolean doSave(Utente u){
         try(Connection con = ConPool.getConnection()){
             PreparedStatement PS = con.prepareStatement("SELECT email FROM utente WHERE email = ?");
@@ -32,6 +41,13 @@ public class UtenteDAO {
         }
     }
 
+    /**
+     * Metodo che si occupa di accedere al database per ottenere le informazioni relative all'utente sulla base della sua email e password
+     *
+     * @param email - email dell'utente
+     * @param password - password dell'utente
+     * @return Utente - utente a  cui si rifersicono email e password
+     */
     public Utente doRetrieveByEmailPassword(String email, String password){
         try (Connection con = ConPool.getConnection()) {
             PreparedStatement ps =

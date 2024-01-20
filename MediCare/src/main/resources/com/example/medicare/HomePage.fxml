@@ -49,7 +49,7 @@
       </image>
    </ImageView>
 
-   <Button layoutX="17.0" layoutY="413.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="180.0" stylesheets="@Style.css" text="Ricerca">
+   <Button layoutX="17.0" layoutY="413.0" mnemonicParsing="false" onAction="#goToAreaRicerca" prefHeight="80.0" prefWidth="180.0" stylesheets="@Style.css" text="Ricerca">
       <tooltip>
          <Tooltip text="Cerca un Ospedale" />
       </tooltip>

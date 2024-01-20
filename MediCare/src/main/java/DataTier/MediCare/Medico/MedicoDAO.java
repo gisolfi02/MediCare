@@ -8,7 +8,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * Classe che si occupa di accedere al database per ottenere informazioni relative ai medici
+ */
 public class MedicoDAO {
+    /**
+     * Metodo che si occupa di cercare i medici appartenemti ad un dato reparto di uno specifico ospedale
+     * @param reparto nome del reparto
+     * @param codice id dell'ospedale
+     * @return lista di medici
+     */
     public ArrayList<Medico> doRetriveByRepartoOspedale(String reparto, String codice){
         try(Connection con = ConPool.getConnection()) {
             PreparedStatement ps = con.prepareStatement("SELECT ID, nome, cognome, email, DDN, nomeReparto, idOspedale From Medico where nomeReparto=? and idOspedale=?");
@@ -33,6 +42,11 @@ public class MedicoDAO {
         }
     }
 
+    /**
+     * Metodo che si occupa di cercare un medico in base al suo id
+     * @param id id del medico
+     * @return medico
+     */
     public Medico doRetriveById(int id){
         try(Connection con = ConPool.getConnection()) {
             PreparedStatement ps = con.prepareStatement("SELECT id,nome,cognome,email,DDN,nomeReparto,idOspedale from Medico WHERE id=?");

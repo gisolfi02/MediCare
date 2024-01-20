@@ -86,6 +86,20 @@ public class HomePageController {
         stage.show();
     }
 
+    @FXML
+    protected void goToAreaRicerca(ActionEvent event) throws IOException {
+        fxmlLoader = new FXMLLoader(Main.class.getResource("cercaOspedali-view.fxml"));
+        Parent root = fxmlLoader.load();
+        CercaOspedaliController cercaOspedaliController = fxmlLoader.getController();
+        cercaOspedaliController.setUtente(utente);
+
+
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
 
 
     protected void setUtente(Utente utente){

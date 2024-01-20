@@ -7,8 +7,16 @@ import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
+/**
+ * Classe che si occupda di accedere al database per ottenere o memorizzare le informazioni relative alle prenotazioni
+ */
 public class PrenotazioneDAO {
 
+    /**
+     * Metodo che si occupa di memorizzare la prenotazione effettuata
+     * @param prenotazione
+     * @return valore booleano che indica se il salvataggio è andato a buon fine o meno
+     */
     public boolean doSave(Prenotazione prenotazione){
         try(Connection con = ConPool.getConnection()){
             PreparedStatement ps = con.prepareStatement("INSERT INTO Prenotazione(data,ora,nomePaziente,cognomePaziente,codiceFiscalePaziente,emailUtente,idMedico,idOspedale) values (?,?,?,?,?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
@@ -33,6 +41,12 @@ public class PrenotazioneDAO {
         }
     }
 
+    /**
+     * Metodo che si occupa di ottenere le ore non disponibili per la prenotazione presso un medico in un determinato giorno
+     * @param data data della prenotazione
+     * @param idMedico id del medico
+     * @return lista di ore non disponibili per la prenotazione
+     */
     public ArrayList<String> doRetriveOreDisp(LocalDate data, int idMedico){
         try(Connection con = ConPool.getConnection()){
             PreparedStatement ps = con.prepareStatement("SELECT ora FROM Prenotazione where data=? and idMedico=?");
@@ -49,6 +63,11 @@ public class PrenotazioneDAO {
         }
     }
 
+    /**
+     * Metodo che si occupa di ottenere tuute le prenotazioni effettuate da un utente
+     * @param u utente
+     * @return lista di prenotazioni effettuate
+     */
     public ArrayList<Prenotazione> doRetrivePrenotazioniByUtente(Utente u){
         try(Connection con = ConPool.getConnection()) {
             PreparedStatement ps = con.prepareStatement("SELECT codice,data,ora,nomePaziente,cognomePaziente,codiceFiscalePaziente,emailUtente,idMedico,idOspedale FROM Prenotazione where emailUtente=?");

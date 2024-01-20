@@ -25,7 +25,7 @@ public class PrenotazioneTest {
         p1.setIdOspedale(170901);
         if(plogic.doPrenotazione(p1.getNome(), p1.getCognome(), p1.getCf(), p1.getData(), p1.getOra(), p1.getEmailUtente(),"Alberto Iudicelli-1" ,"AZIENDA OSPEDALIERA REGIONALE \"S. CARLO\"-170901")==0)
             plogic.salvaPrenotazione(p1);
-        Prenotazione retpd = pd.doRetrieveByCode(1);
+        Prenotazione retpd = pd.doRetrieveByCode(p1.getCodice());
         assertNull(retpd);
     }
 
@@ -42,7 +42,7 @@ public class PrenotazioneTest {
         p2.setIdOspedale(170901);
         if(plogic.doPrenotazione(p2.getNome(), p2.getCognome(), p2.getCf(), p2.getData(), p2.getOra(), p2.getEmailUtente(),"Alberto Iudicelli-1" ,"AZIENDA OSPEDALIERA REGIONALE \"S. CARLO\"-170901")==0)
             plogic.salvaPrenotazione(p2);
-        Prenotazione retpd = pd.doRetrieveByCode(1);
+        Prenotazione retpd = pd.doRetrieveByCode(p2.getCodice());
         assertNull(retpd);
     }
 
@@ -59,7 +59,7 @@ public class PrenotazioneTest {
         p3.setIdOspedale(170901);
         if(plogic.doPrenotazione(p3.getNome(), p3.getCognome(), p3.getCf(), p3.getData(), p3.getOra(), p3.getEmailUtente(),"Alberto Iudicelli-1" ,"AZIENDA OSPEDALIERA REGIONALE \"S. CARLO\"-170901")==0)
             plogic.salvaPrenotazione(p3);
-        Prenotazione retpd = pd.doRetrieveByCode(1);
+        Prenotazione retpd = pd.doRetrieveByCode(p3.getCodice());
         assertNull(retpd);
     }
 
@@ -76,7 +76,7 @@ public class PrenotazioneTest {
         p4.setIdOspedale(170901);
         if(plogic.doPrenotazione(p4.getNome(), p4.getCognome(), p4.getCf(), p4.getData(), p4.getOra(), p4.getEmailUtente(),"Alberto Iudicelli-1" ,"AZIENDA OSPEDALIERA REGIONALE \"S. CARLO\"-170901")==0)
             plogic.salvaPrenotazione(p4);
-        Prenotazione retpd = pd.doRetrieveByCode(1);
+        Prenotazione retpd = pd.doRetrieveByCode(p4.getCodice());
         assertNull(retpd);
     }
 
@@ -94,7 +94,7 @@ public class PrenotazioneTest {
         p5.setIdOspedale(170901);
         if(plogic.doPrenotazione(p5.getNome(), p5.getCognome(), p5.getCf(), p5.getData(), p5.getOra(), p5.getEmailUtente(),"Alberto Iudicelli-1" ,"AZIENDA OSPEDALIERA REGIONALE \"S. CARLO\"-170901")==0)
             plogic.salvaPrenotazione(p5);
-        Prenotazione retpd = pd.doRetrieveByCode(1);
+        Prenotazione retpd = pd.doRetrieveByCode(p5.getCodice());
         assertNull(retpd);
     }
 
