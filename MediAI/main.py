@@ -1,4 +1,5 @@
 import csv
+import os
 import re
 import warnings
 import numpy as np
@@ -21,7 +22,7 @@ warnings.filterwarnings("ignore", category=UserWarning)
 
 
 # Carico i dataset di training e testing
-training_set = pd.read_csv('Datasets/Training.csv')
+training_set = pd.read_csv("Datasets/Training.csv")
 
 
 # prendo le colonne del training set
@@ -245,6 +246,7 @@ def tree_to_code(tree, feature_names, test):
             break
         except:
             print("Inserisci un input valido.")
+
     def diagnose(node, depth):
         if tree_.feature[node] != _tree.TREE_UNDEFINED:
             name, threshold = feature_name[node], tree_.threshold[node]
@@ -297,9 +299,19 @@ def tree_to_code(tree, feature_names, test):
     diagnose(0, 1)
 
 
-if __name__ == '__main__':
+def invokeFunction(test):
     getSeverityDict()
     getDescription()
     getprecautionDict()
     getInfo()
-    tree_to_code(classifier, columns,0)
+    var = tree_to_code(classifier, columns, test)
+    if test == 1:
+        if var != 0 and var != -1:
+            return 5
+        else:
+            return var
+
+
+if __name__ == "__main__":
+    invokeFunction(0)
+
