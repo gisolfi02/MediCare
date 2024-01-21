@@ -13,6 +13,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * La seguente classe gestisce l'interfaccia del home page dell'applicazione
+ */
 public class HomePageController {
     @FXML
     private Button home;

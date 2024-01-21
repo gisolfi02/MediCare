@@ -19,6 +19,9 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+/**
+ * La seguente classe gestisce l'iterfaccia che mostra lo storico delle prenotazioni
+ */
 public class StoricoPrenotazioniController implements Initializable {
 
     @FXML

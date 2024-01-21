@@ -11,6 +11,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * La seguente classe gestisce l'iterfaccia dell'area personale dell'utente
+ */
 public class UserController {
     @FXML
     private Label account;

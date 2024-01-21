@@ -16,6 +16,9 @@ import java.io.IOException;
 import java.time.LocalDate;
 
 
+/**
+ * La seguente classe gestisce l'interfaccia della registazione all'applicazione
+ */
 public class RegisterController {
 
     @FXML

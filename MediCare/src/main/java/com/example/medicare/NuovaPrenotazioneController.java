@@ -22,9 +22,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
+/**
+ * La seguente classe gestice l'interfaccia della nuova prenotazione
+ */
 public class NuovaPrenotazioneController implements Initializable {
     private PrenotazioneLogic prenotazioneLogic = new PrenotazioneLogic();
 

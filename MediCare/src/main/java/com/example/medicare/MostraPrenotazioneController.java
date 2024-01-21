@@ -16,6 +16,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * La seguente classe gestisce l'interfaccia nella quale si visualizza una prenotazione
+ */
 public class MostraPrenotazioneController {
     private Scene scene;
     private Stage stage;

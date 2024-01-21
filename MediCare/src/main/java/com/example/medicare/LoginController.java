@@ -16,6 +16,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 
+/**
+ * La seguente classe gestisce l'interfaccia del login all'applicazione
+ */
 public class LoginController {
     @FXML
     private TextField fieldEmail;

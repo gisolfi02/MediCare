@@ -14,6 +14,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * La seguente classe gestisce l'interfaccia del chatbot
+ */
 public class ChatbotController {
     @FXML
     private Button home;

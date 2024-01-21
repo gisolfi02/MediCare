@@ -11,6 +11,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * La seguente classe gestisce l'interfaccia della area prenotazione
+ */
 public class AreaPrenotazioneController {
     private Scene scene;
     private Stage stage;

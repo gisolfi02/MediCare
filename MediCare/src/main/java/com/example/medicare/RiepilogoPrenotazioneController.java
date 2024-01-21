@@ -15,6 +15,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * La seguente classe gestisce l'iterfaccia del riepilodo della prenotazione
+ */
 public class RiepilogoPrenotazioneController {
 
 
