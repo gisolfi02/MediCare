@@ -64,7 +64,7 @@ public class PrenotazioneDAO {
     }
 
     /**
-     * Metodo che si occupa di ottenere tuute le prenotazioni effettuate da un utente
+     * Metodo che si occupa di ottenere tutte le prenotazioni effettuate da un utente
      * @param u utente
      * @return lista di prenotazioni effettuate
      */
@@ -93,6 +93,11 @@ public class PrenotazioneDAO {
         }
     }
 
+    /**
+     * Metodo che si occupa di cercare una prenotazione tramite il codice
+     * @param code codice della prenotazione
+     * @return una prenotazione
+     */
     public Prenotazione doRetrieveByCode(int code){
         try(Connection con = ConPool.getConnection()) {
             PreparedStatement ps = con.prepareStatement("SELECT codice,data,ora,nomePaziente,cognomePaziente,codiceFiscalePaziente,emailUtente,idMedico,idOspedale FROM Prenotazione where codice=?");
@@ -116,6 +121,38 @@ public class PrenotazioneDAO {
             }
 
         } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * Metodo che si occupa di eliminare una prenotazione
+     * @param codice codice della prenotazione
+     */
+    public void deleteById(int codice){
+        try(Connection con = ConPool.getConnection()) {
+            PreparedStatement ps = con.prepareStatement("DELETE FROM Prenotazione WHERE codice=?");
+            ps.setInt(1, codice);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * Metodo che aggiorna la prenotazione nel database con la nuova data e la nuova ora
+     * @param codice codice della prenotazione
+     * @param data nuova data
+     * @param ora nuova ora
+     */
+    public void doUpdate(int codice,LocalDate data, String ora){
+        try(Connection con = ConPool.getConnection()) {
+            PreparedStatement ps = con.prepareStatement("UPDATE Prenotazione SET data=?,ora=? WHERE codice=?");
+            ps.setDate(1,Date.valueOf(data));
+            ps.setString(2,ora);
+            ps.setInt(3,codice);
+            ps.executeUpdate();
+        }catch (SQLException e){
             throw new RuntimeException(e);
         }
     }

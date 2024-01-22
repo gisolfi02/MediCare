@@ -198,8 +198,14 @@ public class NuovaPrenotazioneController implements Initializable {
 
     @FXML
     protected void mostraOra(MouseEvent event){
-        ArrayList<String> ore = prenotazioneLogic.getOre(dataPicker.getValue(),medicoBox.getValue());
-        ObservableList oreDisp = FXCollections.observableArrayList(ore);
-        oraBox.setItems(oreDisp);
+        if(dataPicker.getValue().isBefore(LocalDate.now())){
+            errore.setText("Data non valida");
+            throw new RuntimeException();
+        }else {
+            errore.setText("");
+            ArrayList<String> ore = prenotazioneLogic.getOre(dataPicker.getValue(), medicoBox.getValue());
+            ObservableList<String> oreDisp = FXCollections.observableArrayList(ore);
+            oraBox.setItems(oreDisp);
+        }
     }
 }

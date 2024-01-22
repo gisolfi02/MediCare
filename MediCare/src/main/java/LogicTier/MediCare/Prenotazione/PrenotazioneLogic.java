@@ -175,6 +175,32 @@ public class PrenotazioneLogic {
 
 
     /**
+     * Metodo che effettua l'eliminazione di una prenotazione
+     * @param codice codice della prenotazione
+     */
+    public void eliminaPrenotazione(int codice){
+        prenotazioneDAO.deleteById(codice);
+    }
+
+    /**
+     * Metodo che effettua la modifica della prenotazione
+     * @param codice codice della prenotazione
+     * @param data nuova data della prenotazione
+     * @param ora nuova ora della prenotazione
+     * @return intero che indica se la modifica è andata a buon fine
+     */
+    public int salvaModifiche(int codice, LocalDate data, String ora){
+        if(data==null || data.isBefore(LocalDate.now())){
+            return 1;
+        }
+        if(ora == null || ora.isEmpty()){
+            return 2;
+        }
+        prenotazioneDAO.doUpdate(codice,data,ora);
+        return 0;
+    }
+
+    /**
      * Metodo che restituisce la prenotazione appena effettuata
      * @return prenotazione
      */
