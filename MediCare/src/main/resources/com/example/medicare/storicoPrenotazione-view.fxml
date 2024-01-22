@@ -43,5 +43,5 @@
             </font></Label>
       </children>
    </Pane>
-   <VBox fx:id="container" alignment="TOP_CENTER" layoutX="16.0" layoutY="11.0" prefHeight="777.0" prefWidth="382.0" spacing="2.0" style="-fx-border-color: black;" stylesheets="@Style.css" />
+   <VBox fx:id="container" alignment="TOP_CENTER" layoutX="16.0" layoutY="11.0" prefHeight="777.0" prefWidth="382.0" spacing="2.0" styleClass="vBox" stylesheets="@Style.css" />
 </AnchorPane>

@@ -48,50 +48,50 @@
       <children>
          <Label fx:id="prenotazioneLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="58.0" prefHeight="59.0" prefWidth="400.0" text="Prenotazione N.">
             <font>
-               <Font size="41.0" />
+               <Font name="System Bold" size="41.0" />
             </font>
          </Label>
-         <Label fx:id="nomeLabel" layoutX="11.0" layoutY="145.0" prefHeight="30.0" prefWidth="366.0" text="Nome Paziente:">
+         <Label fx:id="nomeLabel" layoutX="11.0" layoutY="145.0" prefHeight="30.0" prefWidth="366.0" text="Nome Paziente:" textFill="WHITE">
             <font>
                <Font size="20.0" />
             </font>
          </Label>
-         <Label fx:id="cognomeLabel" layoutX="11.0" layoutY="210.0" prefHeight="30.0" prefWidth="366.0" text="Cognome Paziente:">
+         <Label fx:id="cognomeLabel" layoutX="11.0" layoutY="210.0" prefHeight="30.0" prefWidth="366.0" text="Cognome Paziente:" textFill="WHITE">
             <font>
                <Font size="20.0" />
             </font>
          </Label>
-         <Label fx:id="cfLabel" layoutX="11.0" layoutY="275.0" prefHeight="30.0" prefWidth="366.0" text="CF Paziente:">
+         <Label fx:id="cfLabel" layoutX="11.0" layoutY="275.0" prefHeight="30.0" prefWidth="366.0" text="CF Paziente:" textFill="WHITE">
             <font>
                <Font size="20.0" />
             </font>
          </Label>
-         <Label fx:id="dataLabel" layoutX="11.0" layoutY="340.0" prefHeight="30.0" prefWidth="366.0" text="Data Prenotazione:">
+         <Label fx:id="dataLabel" layoutX="11.0" layoutY="340.0" prefHeight="30.0" prefWidth="366.0" text="Data Prenotazione:" textFill="WHITE">
             <font>
                <Font size="20.0" />
             </font>
          </Label>
-         <Label fx:id="oraLabel" layoutX="11.0" layoutY="405.0" prefHeight="30.0" prefWidth="366.0" text="Ora Prenotazione:">
+         <Label fx:id="oraLabel" layoutX="11.0" layoutY="405.0" prefHeight="30.0" prefWidth="366.0" text="Ora Prenotazione:" textFill="WHITE">
             <font>
                <Font size="20.0" />
             </font>
          </Label>
-         <Label fx:id="medicoLabel" layoutX="11.0" layoutY="470.0" prefHeight="30.0" prefWidth="366.0" text="Medico:">
+         <Label fx:id="medicoLabel" layoutX="11.0" layoutY="470.0" prefHeight="30.0" prefWidth="366.0" text="Medico:" textFill="WHITE">
             <font>
                <Font size="20.0" />
             </font>
          </Label>
-         <Label fx:id="repartoLabel" layoutX="11.0" layoutY="535.0" prefHeight="30.0" prefWidth="366.0" text="Reparto:">
+         <Label fx:id="repartoLabel" layoutX="11.0" layoutY="535.0" prefHeight="30.0" prefWidth="366.0" text="Reparto:" textFill="WHITE">
             <font>
                <Font size="20.0" />
             </font>
          </Label>
-         <Label fx:id="ospedaleLabel" alignment="TOP_LEFT" layoutX="11.0" layoutY="600.0" prefHeight="82.0" prefWidth="366.0" text="Ospedale:" wrapText="true">
+         <Label fx:id="ospedaleLabel" alignment="TOP_LEFT" layoutX="11.0" layoutY="600.0" prefHeight="82.0" prefWidth="366.0" text="Ospedale:" textFill="WHITE" wrapText="true">
             <font>
                <Font size="20.0" />
             </font>
          </Label>
-         <Label fx:id="comuneLabel" layoutX="11.0" layoutY="680.0" prefHeight="30.0" prefWidth="373.0" text="Comune:">
+         <Label fx:id="comuneLabel" layoutX="11.0" layoutY="680.0" prefHeight="30.0" prefWidth="373.0" text="Comune:" textFill="WHITE">
             <font>
                <Font size="20.0" />
             </font>
@@ -109,25 +109,53 @@
          <ChoiceBox fx:id="oraBox" layoutX="187.0" layoutY="408.0" onMousePressed="#mostraOra" prefHeight="25.0" prefWidth="196.0" visible="false" />
       </children>
    </Pane>
-   <Pane fx:id="operazioniPane" layoutX="66.0" layoutY="710.0" prefHeight="82.0" prefWidth="334.0" visible="false">
+   <Pane fx:id="operazioniPane" layoutX="66.0" layoutY="710.0" prefHeight="82.0" prefWidth="334.0" styleClass="bottoniPane" stylesheets="@Style.css" visible="false">
       <children>
-         <Button fx:id="modificaButton" layoutX="21.0" layoutY="24.0" mnemonicParsing="false" onAction="#modifica" prefHeight="30.0" prefWidth="131.0" text="Modifica" />
-         <Button fx:id="eliminaButton" layoutX="171.0" layoutY="24.0" mnemonicParsing="false" onAction="#elimina" prefHeight="30.0" prefWidth="131.0" text="Elimina" />
-         <Button fx:id="salvaButton" layoutX="102.0" layoutY="42.0" mnemonicParsing="false" onAction="#salva" prefHeight="25.0" prefWidth="131.0" text="Salva Modifiche" visible="false" />
-         <Label fx:id="salvaLabel" alignment="CENTER" layoutX="63.0" layoutY="16.0" prefHeight="17.0" prefWidth="196.0" />
+         <Button fx:id="modificaButton" layoutX="21.0" layoutY="24.0" mnemonicParsing="false" onAction="#modifica" prefHeight="30.0" prefWidth="131.0" styleClass="modificaButton" text="Modifica">
+            <graphic>
+               <ImageView fitHeight="19.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@Images/icons8-modificare-50.png" />
+                  </image>
+               </ImageView>
+            </graphic></Button>
+         <Button fx:id="eliminaButton" layoutX="171.0" layoutY="24.0" mnemonicParsing="false" onAction="#elimina" prefHeight="30.0" prefWidth="131.0" styleClass="eliminaButton" text="Elimina">
+            <graphic>
+               <ImageView fitHeight="19.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@Images/icons8-elimina-50.png" />
+                  </image>
+               </ImageView>
+            </graphic></Button>
+         <Button fx:id="salvaButton" layoutX="97.0" layoutY="39.0" mnemonicParsing="false" onAction="#salva" prefHeight="25.0" prefWidth="131.0" styleClass="salvaButton" text="Salva Modifiche" visible="false">
+            <graphic>
+               <ImageView fitHeight="19.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@Images/icons8-salva-50.png" />
+                  </image>
+               </ImageView>
+            </graphic></Button>
+         <Label fx:id="salvaLabel" alignment="CENTER" layoutX="69.0" layoutY="15.0" prefHeight="17.0" prefWidth="196.0" textFill="#f41616" />
       </children>
    </Pane>
-   <Pane fx:id="confermaPane" layoutX="19.0" layoutY="294.0" prefHeight="234.0" prefWidth="374.0" visible="false">
+   <Pane fx:id="confermaPane" layoutX="19.0" layoutY="294.0" prefHeight="234.0" prefWidth="374.0" styleClass="confermaPane" stylesheets="@Style.css" visible="false">
       <children>
          <Label layoutX="22.0" layoutY="36.0" text="Conferma l'eliminazione">
             <font>
                <Font size="31.0" />
             </font>
          </Label>
-         <Button layoutX="113.0" layoutY="140.0" mnemonicParsing="false" onAction="#conferma" prefHeight="46.0" prefWidth="147.0" text="Conferma">
+         <Button layoutX="87.0" layoutY="138.0" mnemonicParsing="false" onAction="#conferma" prefHeight="46.0" prefWidth="147.0" styleClass="confermaButton" stylesheets="@Style.css" text="Conferma">
             <font>
                <Font size="23.0" />
             </font>
+            <graphic>
+               <ImageView fitHeight="35.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@Images/icons8-segno-di-spunta-50.png" />
+                  </image>
+               </ImageView>
+            </graphic>
          </Button>
       </children>
    </Pane>

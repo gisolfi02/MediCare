@@ -54,18 +54,49 @@
          <Font name="Book Antiqua" size="12.0" />
       </font>
    </Label>
-   <Pane fx:id="riepilogoPane" layoutX="52.0" layoutY="261.0" prefHeight="462.0" prefWidth="326.0">
+   <Pane fx:id="riepilogoPane" layoutX="24.0" layoutY="257.0" prefHeight="530.0" prefWidth="366.0">
       <children>
-         <Label fx:id="medicoLabel" layoutX="32.0" layoutY="225.0" prefHeight="36.0" prefWidth="262.0" text="Medico: " />
-         <Label fx:id="oraLabel" layoutX="32.0" layoutY="180.0" prefHeight="36.0" prefWidth="262.0" text="Ora prenotazione: " />
-         <Label fx:id="cfLabel" layoutX="32.0" layoutY="90.0" prefHeight="36.0" prefWidth="262.0" text="Codice Fiscale: " />
-         <Label alignment="CENTER" layoutX="32.0" prefHeight="44.0" prefWidth="262.0" styleClass="logoLabel" stylesheets="@Style.css" text="Riepilogo Prenotazione" />
-         <Label fx:id="pazienteLabel" layoutX="32.0" layoutY="45.0" prefHeight="36.0" prefWidth="262.0" text="Paziente: " />
-         <Label fx:id="dataLabel" layoutX="32.0" layoutY="135.0" prefHeight="36.0" prefWidth="262.0" text="Data prenotazione: " />
-         <Label fx:id="repartoLabel" layoutX="32.0" layoutY="270.0" prefHeight="36.0" prefWidth="262.0" text="Reparto: " />
-         <Label fx:id="ospedaleLabel" layoutX="32.0" layoutY="315.0" prefHeight="36.0" prefWidth="262.0" text="Ospedale: " />
-         <Label fx:id="comuneLabel" layoutX="32.0" layoutY="355.0" prefHeight="36.0" prefWidth="262.0" text="Comune: " />
-         <Button layoutX="92.0" layoutY="414.0" mnemonicParsing="false" onAction="#salva" text="Conferma Prenotazione" />
+         <Label fx:id="medicoLabel" layoutX="32.0" layoutY="244.0" prefHeight="36.0" prefWidth="262.0" text="Medico: " textFill="WHITE">
+            <font>
+               <Font size="15.0" />
+            </font></Label>
+         <Label fx:id="oraLabel" layoutX="32.0" layoutY="198.0" prefHeight="36.0" prefWidth="262.0" text="Ora prenotazione: " textFill="WHITE">
+            <font>
+               <Font size="15.0" />
+            </font></Label>
+         <Label fx:id="cfLabel" layoutX="32.0" layoutY="106.0" prefHeight="36.0" prefWidth="262.0" text="Codice Fiscale: " textFill="WHITE">
+            <font>
+               <Font size="15.0" />
+            </font></Label>
+         <Label alignment="CENTER" layoutX="52.0" layoutY="7.0" prefHeight="44.0" prefWidth="262.0" styleClass="logoLabel" stylesheets="@Style.css" text="Riepilogo Prenotazione" />
+         <Label fx:id="pazienteLabel" layoutX="32.0" layoutY="60.0" prefHeight="36.0" prefWidth="262.0" text="Paziente: " textFill="WHITE">
+            <font>
+               <Font size="15.0" />
+            </font></Label>
+         <Label fx:id="dataLabel" layoutX="32.0" layoutY="152.0" prefHeight="36.0" prefWidth="262.0" text="Data prenotazione: " textFill="WHITE">
+            <font>
+               <Font size="15.0" />
+            </font></Label>
+         <Label fx:id="repartoLabel" layoutX="32.0" layoutY="290.0" prefHeight="36.0" prefWidth="262.0" text="Reparto: " textFill="WHITE">
+            <font>
+               <Font size="15.0" />
+            </font></Label>
+         <Label fx:id="ospedaleLabel" contentDisplay="TEXT_ONLY" layoutX="32.0" layoutY="336.0" prefHeight="36.0" prefWidth="262.0" text="Ospedale: " textFill="WHITE" wrapText="true">
+            <font>
+               <Font size="15.0" />
+            </font></Label>
+         <Label fx:id="comuneLabel" layoutX="32.0" layoutY="382.0" prefHeight="36.0" prefWidth="262.0" text="Comune: " textFill="WHITE">
+            <font>
+               <Font size="15.0" />
+            </font></Label>
+         <Button layoutX="83.0" layoutY="446.0" mnemonicParsing="false" onAction="#salva" prefHeight="38.0" prefWidth="200.0" styleClass="confermaPrenotazioneButton" stylesheets="@Style.css" text="Conferma Prenotazione">
+            <graphic>
+               <ImageView fitHeight="58.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@Images/icons8-segno-di-spunta-50.png" />
+                  </image>
+               </ImageView>
+            </graphic></Button>
       </children>
    </Pane>
    <Label fx:id="resultLabel" alignment="CENTER" layoutX="19.0" layoutY="435.0" prefHeight="174.0" prefWidth="376.0" wrapText="true">

@@ -58,27 +58,64 @@
       </font>
    </Label>
    <ChoiceBox fx:id="repartiBox" layoutX="14.0" layoutY="410.0" prefWidth="150.0" visible="false" />
-   <Label fx:id="repartiLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="6.0" layoutY="392.0" prefWidth="166.0" stylesheets="@Style.css" text="Seleziona il reparto:" textAlignment="CENTER" visible="false" />
+   <Label fx:id="repartiLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="6.0" layoutY="392.0" prefWidth="166.0" stylesheets="@Style.css" text="Seleziona il reparto:" textAlignment="CENTER" textFill="WHITE" visible="false">
+      <font>
+         <Font size="15.0" />
+      </font></Label>
    <ChoiceBox fx:id="comuniBox" layoutX="14.0" layoutY="325.0" prefWidth="150.0" />
    <ChoiceBox fx:id="medicoBox" layoutX="249.0" layoutY="410.0" prefWidth="150.0" visible="false" />
    <ChoiceBox fx:id="ospedaliBox" layoutX="249.0" layoutY="325.0" prefWidth="150.0" visible="false" />
-   <Label layoutX="35.0" layoutY="307.0" text="Seleziona il comune:" />
-   <Label fx:id="ospedaliLabel" layoutX="270.0" layoutY="307.0" text="Seleziona l'ospedale:" visible="false" />
-   <Label fx:id="medicoLabel" layoutX="272.0" layoutY="392.0" text="Seleziona il medico:" visible="false" />
+   <Label layoutX="21.0" layoutY="305.0" text="Seleziona il comune:" textFill="WHITE">
+      <font>
+         <Font size="15.0" />
+      </font></Label>
+   <Label fx:id="ospedaliLabel" layoutX="255.0" layoutY="305.0" text="Seleziona l'ospedale:" textFill="WHITE" visible="false">
+      <font>
+         <Font size="15.0" />
+      </font></Label>
+   <Label fx:id="medicoLabel" layoutX="258.0" layoutY="392.0" text="Seleziona il medico:" textFill="WHITE" visible="false">
+      <font>
+         <Font size="15.0" />
+      </font></Label>
    <Pane fx:id="formPrenotazione" layoutX="27.0" layoutY="453.0" prefHeight="342.0" prefWidth="358.0" visible="false">
       <children>
-         <Label layoutX="161.0" layoutY="14.0" text="Nome:" />
-         <TextField fx:id="nomeField" layoutX="105.0" layoutY="31.0" />
-         <Label layoutX="152.0" layoutY="65.0" text="Cognome:" />
+         <Label layoutX="156.0" layoutY="13.0" text="Nome:" textFill="WHITE">
+            <font>
+               <Font size="15.0" />
+            </font></Label>
+         <TextField fx:id="nomeField" layoutX="105.0" layoutY="33.0" />
+         <Label layoutX="144.0" layoutY="61.0" text="Cognome:" textFill="WHITE">
+            <font>
+               <Font size="15.0" />
+            </font></Label>
          <TextField fx:id="cognomeField" layoutX="104.0" layoutY="82.0" />
-         <Label layoutX="140.0" layoutY="115.0" text="Codice Fiscale:" />
+         <Label layoutX="130.0" layoutY="112.0" text="Codice Fiscale:" textFill="WHITE">
+            <font>
+               <Font size="15.0" />
+            </font></Label>
          <TextField fx:id="cfField" layoutX="104.0" layoutY="132.0" onKeyPressed="#upperCase" />
-         <Label layoutX="129.0" layoutY="167.0" text="Data Prenotazione:" />
+         <Label layoutX="115.0" layoutY="163.0" text="Data Prenotazione:" textFill="WHITE">
+            <font>
+               <Font size="15.0" />
+            </font></Label>
          <DatePicker fx:id="dataPicker" layoutX="104.0" layoutY="184.0" prefHeight="25.0" prefWidth="150.0" />
-         <Label layoutX="131.0" layoutY="220.0" text="Ora Prenotazione:" />
+         <Label layoutX="118.0" layoutY="216.0" text="Ora Prenotazione:" textFill="WHITE">
+            <font>
+               <Font size="15.0" />
+            </font></Label>
          <ChoiceBox fx:id="oraBox" layoutX="103.0" layoutY="237.0" onMousePressed="#mostraOra" prefWidth="150.0" />
-         <Button fx:id="invia" layoutX="152.0" layoutY="303.0" mnemonicParsing="false" onAction="#prenota" text="Prenota " />
-         <Label fx:id="errore" alignment="CENTER" layoutX="82.0" layoutY="277.0" prefHeight="17.0" prefWidth="200.0" textFill="RED" />
+         <Button fx:id="invia" layoutX="129.0" layoutY="298.0" mnemonicParsing="false" onAction="#prenota" prefHeight="31.0" prefWidth="96.0" styleClass="prenotaButton" stylesheets="@Style.css" text="Prenota ">
+            <graphic>
+               <ImageView fitHeight="18.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@Images/icons8-invia-e-mail-30.png" />
+                  </image>
+               </ImageView>
+            </graphic></Button>
+         <Label fx:id="errore" alignment="CENTER" layoutX="77.0" layoutY="275.0" prefHeight="17.0" prefWidth="200.0" textFill="RED">
+            <font>
+               <Font size="14.0" />
+            </font></Label>
       </children>
    </Pane>
 </AnchorPane>

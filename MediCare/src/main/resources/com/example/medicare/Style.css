@@ -115,6 +115,88 @@
     -fx-border-color: transparent;
 }
 
+
+.vBox{
+    -fx-border-color: white;
+    -fx-border-radius: 20;
+    -fx-border-width: 3px;
+    -fx-padding: 20px;
+}
+
 .prenotazione{
-    /* Serve per modificare i bottoni delle prenotazione, VAI ANTONIO FALLO*/
+    -fx-background-color: #38444f; /* Colore di sfondo del bottone */
+    -fx-background-radius: 15px;
+    -fx-text-fill: white; /* Colore del testo */
+    -fx-font-size: 23px; /* Dimensione del testo */
+    -fx-alignment: center;
+    -fx-padding: 10 20; /* Padding del bottone (top, right, bottom, left) */
+    -fx-border-radius: 15px;
+    -fx-border-width: 2px;
+    -fx-border-color: #505f6e;
+    -fx-pref-width: 350px;
+}
+
+.bottoniPane Button{
+    -fx-font-size: 15px;
+    -fx-pref-width: 130px;
+    -fx-padding: 5px;
+    -fx-border-color: none;
+}
+
+.bottoniPane Label{
+    -fx-font-size: 13px;
+}
+
+.bottoniPane DataPicker{
+
+}
+
+.modificaButton{
+    -fx-background-color: #df7629;
+}
+
+.eliminaButton{
+    -fx-background-color: #ea1b1b;
+}
+.salvaButton{
+    -fx-pref-width: 140px;
+    -fx-background-color: #2b9505;
+}
+
+.scrollPane{
+    --body-background-color: transparent;
+}
+
+.text-area {
+    -fx-background-color: transparent;
+    -fx-control-inner-background: #38444f;
+    -fx-text-fill: #ffffff;
+}
+.confermaButton{
+    -fx-font-size: 30px;
+    -fx-pref-width: 200px;
+    -fx-padding: 5px;
+    -fx-border-color: none;
+    -fx-background-color: green;
+}
+
+.confermaPane{
+    -fx-background-color: rgba(255, 255, 255, 0.27);
+    -fx-background-radius: 20px;
+}
+
+.prenotaButton{
+    -fx-font-size: 15px;
+    -fx-pref-width: 100px;
+    -fx-padding: 5px;
+    -fx-border-color: none;
+    -fx-background-color: green;
+}
+
+.confermaPrenotazioneButton{
+    -fx-font-size: 15px;
+    -fx-pref-width: 200px;
+    -fx-padding: 5px;
+    -fx-border-color: none;
+    -fx-background-color: green;
 }

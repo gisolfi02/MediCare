@@ -5,26 +5,35 @@ import LogicTier.MediCare.CercaOspedali.CercaOspedaliLogic;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 
 /**
  * La seguente classe gestisce l'iterfaccia dell'area cerca ospedali
  */
-public class CercaOspedaliController {
+public class CercaOspedaliController implements Initializable {
 
     @FXML
     private TextField ricercaField;
     @FXML
     private TextArea ospedaliArea;
+    @FXML
+    private  WebView webView;
+    @FXML
+    private  WebEngine webEngine;
 
     private Scene scene;
     private Stage stage;
@@ -76,5 +85,12 @@ public class CercaOspedaliController {
         for (String o : ospedali){
             ospedaliArea.appendText(o +"\n");
         }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        webEngine = webView.getEngine();
+        webEngine.load("https://www.google.com/maps/");
+        webView.setZoom(0.45);
     }
 }
