@@ -60,48 +60,48 @@
    <ChoiceBox fx:id="repartiBox" layoutX="14.0" layoutY="410.0" prefWidth="150.0" visible="false" />
    <Label fx:id="repartiLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="6.0" layoutY="392.0" prefWidth="166.0" stylesheets="@Style.css" text="Seleziona il reparto:" textAlignment="CENTER" textFill="WHITE" visible="false">
       <font>
-         <Font size="15.0" />
+         <Font name="Book Antiqua" size="15.0" />
       </font></Label>
-   <ChoiceBox fx:id="comuniBox" layoutX="14.0" layoutY="325.0" prefWidth="150.0" />
+   <ChoiceBox fx:id="comuniBox" layoutX="14.0" layoutY="325.0" prefWidth="150.0" stylesheets="@Style.css" />
    <ChoiceBox fx:id="medicoBox" layoutX="249.0" layoutY="410.0" prefWidth="150.0" visible="false" />
    <ChoiceBox fx:id="ospedaliBox" layoutX="249.0" layoutY="325.0" prefWidth="150.0" visible="false" />
    <Label layoutX="21.0" layoutY="305.0" text="Seleziona il comune:" textFill="WHITE">
       <font>
-         <Font size="15.0" />
+         <Font name="Book Antiqua" size="15.0" />
       </font></Label>
    <Label fx:id="ospedaliLabel" layoutX="255.0" layoutY="305.0" text="Seleziona l'ospedale:" textFill="WHITE" visible="false">
       <font>
-         <Font size="15.0" />
+         <Font name="Book Antiqua" size="15.0" />
       </font></Label>
    <Label fx:id="medicoLabel" layoutX="258.0" layoutY="392.0" text="Seleziona il medico:" textFill="WHITE" visible="false">
       <font>
-         <Font size="15.0" />
+         <Font name="Book Antiqua" size="15.0" />
       </font></Label>
    <Pane fx:id="formPrenotazione" layoutX="27.0" layoutY="453.0" prefHeight="342.0" prefWidth="358.0" visible="false">
       <children>
          <Label layoutX="156.0" layoutY="13.0" text="Nome:" textFill="WHITE">
             <font>
-               <Font size="15.0" />
+               <Font name="Book Antiqua" size="15.0" />
             </font></Label>
          <TextField fx:id="nomeField" layoutX="105.0" layoutY="33.0" />
          <Label layoutX="144.0" layoutY="61.0" text="Cognome:" textFill="WHITE">
             <font>
-               <Font size="15.0" />
+               <Font name="Book Antiqua" size="15.0" />
             </font></Label>
          <TextField fx:id="cognomeField" layoutX="104.0" layoutY="82.0" />
          <Label layoutX="130.0" layoutY="112.0" text="Codice Fiscale:" textFill="WHITE">
             <font>
-               <Font size="15.0" />
+               <Font name="Book Antiqua" size="15.0" />
             </font></Label>
          <TextField fx:id="cfField" layoutX="104.0" layoutY="132.0" onKeyPressed="#upperCase" />
          <Label layoutX="115.0" layoutY="163.0" text="Data Prenotazione:" textFill="WHITE">
             <font>
-               <Font size="15.0" />
+               <Font name="Book Antiqua" size="15.0" />
             </font></Label>
          <DatePicker fx:id="dataPicker" layoutX="104.0" layoutY="184.0" prefHeight="25.0" prefWidth="150.0" />
          <Label layoutX="118.0" layoutY="216.0" text="Ora Prenotazione:" textFill="WHITE">
             <font>
-               <Font size="15.0" />
+               <Font name="Book Antiqua" size="15.0" />
             </font></Label>
          <ChoiceBox fx:id="oraBox" layoutX="103.0" layoutY="237.0" onMousePressed="#mostraOra" prefWidth="150.0" />
          <Button fx:id="invia" layoutX="129.0" layoutY="298.0" mnemonicParsing="false" onAction="#prenota" prefHeight="31.0" prefWidth="96.0" styleClass="prenotaButton" stylesheets="@Style.css" text="Prenota ">

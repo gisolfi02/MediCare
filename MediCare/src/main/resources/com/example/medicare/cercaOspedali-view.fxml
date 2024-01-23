@@ -51,7 +51,7 @@
             <Font name="Perpetua" size="40.0" />
         </font>
     </Label>
-   <Button fx:id="ricercaButton" layoutX="359.0" layoutY="96.0" mnemonicParsing="false" onAction="#cerca" prefHeight="39.0" prefWidth="40.0" style="-fx-background-color: None;">
+   <Button fx:id="ricercaButton" layoutX="361.0" layoutY="88.0" mnemonicParsing="false" onAction="#cerca" prefHeight="55.0" prefWidth="0.0" style="-fx-background-color: none;" styleClass="RicercaButton">
       <graphic>
          <ImageView fitHeight="34.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
             <image>
@@ -66,12 +66,15 @@
             <children>
                <TextArea fx:id="ospedaliArea" editable="false" layoutX="-7.0" layoutY="-7.0" prefHeight="298.0" prefWidth="378.0" stylesheets="@Style.css" wrapText="true">
                   <font>
-                     <Font size="15.0" />
+                     <Font name="Book Antiqua" size="15.0" />
                   </font>
                </TextArea>
             </children></AnchorPane>
      </content>
    </ScrollPane>
-   <TextField fx:id="ricercaField" layoutX="15.0" layoutY="102.0" onAction="#cerca" prefHeight="26.0" prefWidth="348.0" promptText="Inserisci una località" />
+   <TextField fx:id="ricercaField" layoutX="15.0" layoutY="102.0" onAction="#cerca" prefHeight="26.0" prefWidth="348.0" promptText="Inserisci una località">
+      <font>
+         <Font name="Book Antiqua" size="12.0" />
+      </font></TextField>
 
 </AnchorPane>

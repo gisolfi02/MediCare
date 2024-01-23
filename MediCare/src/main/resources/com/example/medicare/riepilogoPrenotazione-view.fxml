@@ -99,9 +99,9 @@
             </graphic></Button>
       </children>
    </Pane>
-   <Label fx:id="resultLabel" alignment="CENTER" layoutX="19.0" layoutY="435.0" prefHeight="174.0" prefWidth="376.0" wrapText="true">
+   <Label fx:id="resultLabel" alignment="CENTER" layoutX="19.0" layoutY="435.0" prefHeight="174.0" prefWidth="376.0" styleClass="labelCustomPane" stylesheets="@Style.css" textFill="WHITE" wrapText="true">
       <font>
-         <Font size="18.0" />
+         <Font name="Book Antiqua" size="18.0" />
       </font>
    </Label>
 </AnchorPane>
