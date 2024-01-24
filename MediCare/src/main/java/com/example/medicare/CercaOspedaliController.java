@@ -85,12 +85,16 @@ public class CercaOspedaliController implements Initializable {
         for (String o : ospedali){
             ospedaliArea.appendText(o +"\n");
         }
+        String primoOspedale = ospedali.get(0).split(" - ")[1];
+        primoOspedale = primoOspedale.replaceAll(" ","+" );
+        webEngine.load("https://www.google.com/maps/place/"+primoOspedale);
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         webEngine = webView.getEngine();
         webEngine.load("https://www.google.com/maps/");
-        webView.setZoom(0.45);
+        webView.setZoom(0.65);
     }
+
 }

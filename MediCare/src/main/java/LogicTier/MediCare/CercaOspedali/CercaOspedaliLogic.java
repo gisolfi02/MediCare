@@ -22,7 +22,7 @@ public class CercaOspedaliLogic {
         ArrayList<Ospedale> ospedali = ospedaleDAO.doRetriveByRicerca(ricerca);
         ArrayList<String> nomeIndirizzi = new ArrayList<>();
         for(Ospedale o : ospedali){
-            String temp = "- " + o.getNome() + ", " + o.getIndirizzo();
+            String temp = "- " + o.getNome() + " - " + o.getIndirizzo();
             nomeIndirizzi.add(temp);
         }
         return nomeIndirizzi;
