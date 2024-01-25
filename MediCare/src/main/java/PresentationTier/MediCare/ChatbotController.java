@@ -1,4 +1,5 @@
-package com.example.medicare;
+package PresentationTier.MediCare;
+
 
 import DataTier.MediCare.Utente.Utente;
 import javafx.event.ActionEvent;
@@ -14,9 +15,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 /**
- * La seguente classe gestisce l'interfaccia del home page dell'applicazione
+ * La seguente classe gestisce l'interfaccia del chatbot
  */
-public class HomePageController {
+public class ChatbotController {
     @FXML
     private Button home;
     @FXML
@@ -26,7 +27,6 @@ public class HomePageController {
     private Scene scene;
     private Stage stage;
     private FXMLLoader fxmlLoader;
-
 
     static Utente utente;
 
@@ -61,51 +61,7 @@ public class HomePageController {
         stage.setScene(scene);
         stage.show();
     }
-
-    @FXML
-    protected void goToChatBot(ActionEvent event) throws IOException {
-        fxmlLoader = new FXMLLoader(Main.class.getResource("chatbot-view.fxml"));
-        Parent root = fxmlLoader.load();
-        ChatbotController chatbotController = fxmlLoader.getController();
-        chatbotController.setUtente(utente);
-
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
-    protected void goToAreaPrenotazione(ActionEvent event) throws IOException {
-        fxmlLoader = new FXMLLoader(Main.class.getResource("AreaPrenotazione-view.fxml"));
-        Parent root = fxmlLoader.load();
-        AreaPrenotazioneController areaPrenotazioneController = fxmlLoader.getController();
-        areaPrenotazioneController.setUtente(utente);
-
-
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
-    protected void goToAreaRicerca(ActionEvent event) throws IOException {
-        fxmlLoader = new FXMLLoader(Main.class.getResource("cercaOspedali-view.fxml"));
-        Parent root = fxmlLoader.load();
-        CercaOspedaliController cercaOspedaliController = fxmlLoader.getController();
-        cercaOspedaliController.setUtente(utente);
-
-
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-
-
     protected void setUtente(Utente utente){
-        HomePageController.utente = utente;
+        ChatbotController.utente = utente;
     }
 }

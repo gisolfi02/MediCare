@@ -1,4 +1,4 @@
-package com.example.medicare;
+package PresentationTier.MediCare;
 
 import DataTier.MediCare.Utente.Utente;
 import LogicTier.MediCare.Login.LoginLogic;

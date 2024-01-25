@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="896.0" prefWidth="414.0" style="-fx-background-color: #435363;" styleClass="customAnchorPane" stylesheets="Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medicare.MostraPrenotazioneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="896.0" prefWidth="414.0" style="-fx-background-color: #435363;" styleClass="customAnchorPane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PresentationTier.MediCare.MostraPrenotazioneController">
    <Pane layoutY="796.0" prefHeight="100.0" prefWidth="414.0" styleClass="customPane" stylesheets="@Style.css">
       <children>
          <Button fx:id="Home" layoutX="14.0" layoutY="20.0" mnemonicParsing="false" onAction="#goHome" prefHeight="55.0" prefWidth="55.0" styleClass="buttonCustomPane" stylesheets="@Style.css">
@@ -44,7 +44,7 @@
             </font></Label>
       </children>
    </Pane>
-   <Pane fx:id="prenotazionePane" layoutX="5.0" prefHeight="794.0" prefWidth="402.0" stylesheets="@Style.css">
+   <Pane fx:id="prenotazionePane" layoutX="5.0" prefHeight="794.0" prefWidth="402.0">
       <children>
          <Label fx:id="prenotazioneLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="58.0" prefHeight="59.0" prefWidth="400.0" text="Prenotazione N.">
             <font>
@@ -105,8 +105,8 @@
                </ImageView>
             </graphic>
          </Button>
-         <DatePicker fx:id="dataPicker" layoutX="190.0" layoutY="330.0" prefHeight="25.0" prefWidth="196.0" visible="false" />
-         <ChoiceBox fx:id="oraBox" layoutX="187.0" layoutY="390.0" onMousePressed="#mostraOra" prefHeight="25.0" prefWidth="196.0" visible="false" />
+         <DatePicker fx:id="dataPicker" layoutX="195.0" layoutY="333.0" prefHeight="25.0" prefWidth="189.0" visible="false" />
+         <ChoiceBox fx:id="oraBox" layoutX="195.0" layoutY="393.0" onMousePressed="#mostraOra" prefHeight="25.0" prefWidth="189.0" visible="false" />
       </children>
    </Pane>
    <Pane fx:id="operazioniPane" layoutX="66.0" layoutY="710.0" prefHeight="82.0" prefWidth="334.0" styleClass="bottoniPane" stylesheets="@Style.css" visible="false">

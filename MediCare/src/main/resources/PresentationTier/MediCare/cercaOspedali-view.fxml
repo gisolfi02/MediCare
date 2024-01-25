@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.web.WebView?>
 
-<AnchorPane prefHeight="896.0" prefWidth="414.0" style="-fx-background-color: #435363;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medicare.CercaOspedaliController">
+<AnchorPane prefHeight="896.0" prefWidth="414.0" style="-fx-background-color: #435363;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PresentationTier.MediCare.CercaOspedaliController">
     <Pane layoutY="796.0" prefHeight="100.0" prefWidth="414.0" styleClass="customPane" stylesheets="@Style.css">
         <children>
             <Button fx:id="Home" layoutX="14.0" layoutY="20.0" mnemonicParsing="false" onAction="#goHome" prefHeight="55.0" prefWidth="55.0" styleClass="buttonCustomPane" stylesheets="@Style.css">

@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="fieldTelefono" fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="896.0" prefWidth="414.0" style="-fx-background-color: #435363;" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medicare.RegisterController">
+<AnchorPane id="fieldTelefono" fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="896.0" prefWidth="414.0" style="-fx-background-color: #435363;" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PresentationTier.MediCare.RegisterController">
 
 
    <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="107.0" layoutY="49.0">
