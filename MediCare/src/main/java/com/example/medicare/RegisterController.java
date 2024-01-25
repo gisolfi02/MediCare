@@ -1,4 +1,4 @@
-package PresentationTier.MediCare;
+package com.example.medicare;
 
 import LogicTier.MediCare.Registrazione.RegistrazioneLogic;
 import javafx.event.ActionEvent;

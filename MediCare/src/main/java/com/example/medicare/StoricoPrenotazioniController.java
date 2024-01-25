@@ -1,4 +1,4 @@
-package PresentationTier.MediCare;
+package com.example.medicare;
 
 import DataTier.MediCare.Prenotazione.Prenotazione;
 import DataTier.MediCare.Utente.Utente;

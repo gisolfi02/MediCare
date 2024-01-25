@@ -6,7 +6,7 @@ module com.example.medicare {
     requires org.testng;
     requires javafx.web;
 
-    opens PresentationTier.MediCare to javafx.fxml;
-    exports PresentationTier.MediCare;
+    opens com.example.medicare to javafx.fxml;
+    exports com.example.medicare;
     exports test;
 }
