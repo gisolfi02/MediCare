@@ -21,8 +21,9 @@ public class Main extends Application {
         stage.setTitle("MediCare");
         Image image = new Image(new File("LogoMedicare.png").toURI().toString());
         stage.getIcons().add(image);
+
         stage.setScene(scene);
-        stage.setResizable(false); ///INFORMA CAMBIAMENTO
+        stage.setResizable(false);
         stage.show();
     }
     public static void main(String[] args) {

@@ -1,11 +1,14 @@
 package com.example.medicare;
 
+import DataTier.MediCare.Ospedale.Ospedale;
 import DataTier.MediCare.Prenotazione.Prenotazione;
 import DataTier.MediCare.Utente.Utente;
 import LogicTier.MediCare.Prenotazione.PrenotazioneLogic;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -70,6 +73,10 @@ public class NuovaPrenotazioneController implements Initializable {
     private FXMLLoader fxmlLoader;
 
 
+    private ArrayList<String> ospedali = new ArrayList<>();
+    private ArrayList<String> reparti = new ArrayList<>();
+    private ArrayList<String> medici = new ArrayList<>();
+
     static Utente utente;
 
     @FXML
@@ -105,39 +112,70 @@ public class NuovaPrenotazioneController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
+        ospedaliBox.setVisible(true);
+        repartiBox.setVisible(true);
+        medicoBox.setVisible(true);
         ArrayList<String> comuni = prenotazioneLogic.getComuni();
         comuniBox.getItems().addAll(comuni);
-        comuniBox.setOnAction(this::mostraOspedali);
+        comuniBox.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                ospedali = prenotazioneLogic.getOspedali(comuniBox.getValue());
+                ObservableList<String> listaOspedali = FXCollections.observableArrayList(ospedali);
+                ospedaliBox.getItems().removeAll();
+                ospedaliBox.setItems(listaOspedali);
+                ospedaliBox.setOnAction(this::loadReparti);
+            }
 
-    }
+            private void loadReparti(ActionEvent event) {
+                reparti = prenotazioneLogic.getReparti(ospedaliBox.getValue());
+                ObservableList repartiObv = FXCollections.observableArrayList(reparti);
+                repartiBox.setItems(repartiObv);
+            }
+        });
 
-    private void mostraOspedali(ActionEvent event){
-        ArrayList<String> ospedali = prenotazioneLogic.getOspedali(comuniBox.getValue());
-        ObservableList<String> listaOspedali = FXCollections.observableArrayList(ospedali);
-        ospedaliBox.getItems().removeAll();
-        ospedaliBox.setItems(listaOspedali);
-        ospedaliLabel.setVisible(true);
-        ospedaliBox.setVisible(true);
-        ospedaliBox.setOnAction(this::mostraReparti);
-    }
+        repartiBox.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                String reparto = repartiBox.getValue();
+                medici = prenotazioneLogic.getMedici(reparto, ospedaliBox.getValue());
+                ObservableList mediciObs = FXCollections.observableArrayList(medici);
+                medicoBox.setItems(mediciObs);
 
-    private void mostraReparti(ActionEvent event){
-        ArrayList<String> reparti = prenotazioneLogic.getReparti(ospedaliBox.getValue());
-        ObservableList<String> listaReparti = FXCollections.observableArrayList(reparti);
-        repartiBox.setItems(listaReparti);
-        repartiLabel.setVisible(true);
-        repartiBox.setVisible(true);
-        repartiBox.setOnAction(this::mostraMedici);
-    }
-
-    private void mostraMedici(ActionEvent event) {
-        ArrayList<String> medici = prenotazioneLogic.getMedici(repartiBox.getValue(),ospedaliBox.getValue());
-        ObservableList<String> listaMedici = FXCollections.observableArrayList(medici);
-        medicoBox.setItems(listaMedici);
-        medicoLabel.setVisible(true);
-        medicoBox.setVisible(true);
+            }
+        });
         medicoBox.setOnAction(this::mostraFrom);
     }
+
+
+
+//    private void mostraOspedali(ActionEvent event){
+//        ArrayList<String> ospedali = prenotazioneLogic.getOspedali(comuniBox.getValue());
+//        ObservableList<String> listaOspedali = FXCollections.observableArrayList(ospedali);
+//        ospedaliBox.getItems().removeAll();
+//        ospedaliBox.setItems(listaOspedali);
+//        ospedaliLabel.setVisible(true);
+//        ospedaliBox.setVisible(true);
+//        ospedaliBox.setOnAction(this::mostraReparti);
+//    }
+
+//    private void mostraReparti(ActionEvent event){
+//        ArrayList<String> reparti = prenotazioneLogic.getReparti(ospedaliBox.getValue());
+//        ObservableList<String> listaReparti = FXCollections.observableArrayList(reparti);
+//        repartiBox.setItems(listaReparti);
+//        repartiLabel.setVisible(true);
+//        repartiBox.setVisible(true);
+//        repartiBox.setOnAction(this::mostraMedici);
+//    }
+
+//    private void mostraMedici(ActionEvent event) {
+//        ArrayList<String> medici = prenotazioneLogic.getMedici(repartiBox.getValue(),ospedaliBox.getValue());
+//        ObservableList<String> listaMedici = FXCollections.observableArrayList(medici);
+//        medicoBox.setItems(listaMedici);
+//        medicoLabel.setVisible(true);
+//        medicoBox.setVisible(true);
+//        medicoBox.setOnAction(this::mostraFrom);
+//    }
 
     private void mostraFrom(ActionEvent event) {
         formPrenotazione.setVisible(true);
