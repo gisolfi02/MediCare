@@ -32,6 +32,10 @@ Per poter utilizzare l'applicazione MediCare, il primo passo da eseguire è quel
 ```bash
 git clone https://github.com/gisolfi02/MediCare.git
 ```
-Una volta clonata la repository, modificare nella classe "ConPool" il collegamento al database, inserendo come password la propria password di SQL. Successivamente, aprire SQLWorkBench e creare il database copiando il file contenuto nella directory Database della repository.
+Una volta clonata la repository, modificare nella classe "ConPool" il collegamento al database, inserendo come password la propria password di SQL.
+
+![Screenshot 2024-01-28 183215](https://github.com/gisolfi02/MediCare/assets/114088374/dd2e4d42-e018-4448-87e2-a8cf47a32703)
+
+Successivamente, aprire SQLWorkBench e creare il database copiando il file contenuto nella directory Database della repository.
 ## Avvio
 Una volta eseguiti tutti i passaggi sopra riportati avviare il file "Main" dal vostro IDE.
