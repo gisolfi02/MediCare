@@ -51,10 +51,50 @@
          <Label alignment="CENTER" layoutX="97.0" layoutY="34.0" prefHeight="36.0" prefWidth="221.0" styleClass="labelCustomPane" stylesheets="@Style.css" text=" Benvenuto in MediCare" />
       </children>
    </Pane>
-   <Label fx:id="account" alignment="CENTER" contentDisplay="CENTER" layoutX="43.0" layoutY="326.0" prefHeight="90.0" prefWidth="340.0" styleClass="labelCustomPane" stylesheets="@Style.css" wrapText="true">
-      <font>
-         <Font name="Book Antiqua" size="15.0" />
-      </font>
-   </Label>
-   <Button layoutX="145.0" layoutY="531.0" mnemonicParsing="false" onAction="#doLogout" prefHeight="36.0" prefWidth="123.0" stylesheets="@Style.css" text="Esci" textFill="WHITE" />
+   <Pane fx:id="infoPane" layoutX="14.0" layoutY="282.0" prefHeight="406.0" prefWidth="390.0">
+      <children>
+         <Button layoutX="14.0" layoutY="334.0" mnemonicParsing="false" onAction="#doLogout" prefHeight="36.0" prefWidth="123.0" stylesheets="@Style.css" text="Esci" textFill="WHITE" />
+         <Label fx:id="account" alignment="CENTER" contentDisplay="CENTER" layoutX="25.0" layoutY="91.0" prefHeight="90.0" prefWidth="340.0" styleClass="labelCustomPane" stylesheets="@Style.css" wrapText="true">
+            <font>
+               <Font name="Book Antiqua" size="15.0" />
+            </font>
+         </Label>
+         <Button layoutX="155.0" layoutY="334.0" mnemonicParsing="false" onAction="#cancella" prefHeight="58.0" prefWidth="221.0" styleClass="eliminaAccount" stylesheets="@Style.css" text="Elimina Account" textFill="WHITE">
+            <graphic>
+               <ImageView fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@Images/icons8-elimina-50.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+         </Button>
+      </children>
+   </Pane>
+   <Pane fx:id="confermaPane" layoutX="17.0" layoutY="302.0" prefHeight="361.0" prefWidth="377.0" styleClass="confermaPane" stylesheets="@Style.css" visible="false">
+      <children>
+         <Label contentDisplay="CENTER" layoutX="10.0" layoutY="42.0" prefHeight="157.0" prefWidth="357.0" text="Sei sicuro/a di voler eliminare l'account?" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <font>
+               <Font size="28.0" />
+            </font>
+         </Label>
+         <Button layoutX="14.0" layoutY="274.0" mnemonicParsing="false" onAction="#annulla" styleClass="annullaButton" stylesheets="@Style.css" text="Annulla">
+            <graphic>
+               <ImageView fitHeight="44.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@Images/icons8-elimina-50.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+         </Button>
+         <Button layoutX="206.0" layoutY="274.0" mnemonicParsing="false" onAction="#conferma" styleClass="eliminaAccount" stylesheets="@Style.css" text="Conferma">
+            <graphic>
+               <ImageView fitHeight="44.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@Images/icons8-segno-di-spunta-50.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+         </Button>
+      </children>
+   </Pane>
 </AnchorPane>

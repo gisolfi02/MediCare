@@ -70,4 +70,18 @@ public class UtenteDAO {
             throw new RuntimeException(e);
         }
     }
+
+    /**
+     * Metodo che si occupa di accedere al database e rimuovere le informazioni relative all'utente
+     * @param utente
+     */
+    public void removeUtente(Utente utente){
+        try(Connection con = ConPool.getConnection()) {
+            PreparedStatement ps = con.prepareStatement("DELETE FROM Utente WHERE email=?");
+            ps.setString(1, utente.getEmail());
+            ps.executeUpdate();
+        }catch (SQLException e){
+            throw new RuntimeException(e);
+        }
+    }
 }
