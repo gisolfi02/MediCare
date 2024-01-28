@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://github.com/gisolfi02/MediCare/assets/114088374/6b0c6a3e-062f-4865-89cd-26894e0f4566" style="width:300px;">
+</p>
+
 # MediCare
 Repository contenente il progetto realizzato durante il corso di "Ingegneria del software" tenuto dal Prof. Carmine Gravino presso l'Università degli studi di Salerno
 
@@ -33,13 +37,14 @@ Per poter utilizzare l'applicazione MediCare, il primo passo da eseguire è quel
 git clone https://github.com/gisolfi02/MediCare.git
 ```
 Una volta clonata la repository, modificare nella classe "ConPool" il collegamento al database, inserendo come password la propria password di SQL.
-
-![Screenshot 2024-01-28 183215](https://github.com/gisolfi02/MediCare/assets/114088374/dd2e4d42-e018-4448-87e2-a8cf47a32703)
-
+<p align="center">
+  <img src="https://github.com/gisolfi02/MediCare/assets/114088374/dd2e4d42-e018-4448-87e2-a8cf47a32703">
+</p>
 Successivamente, aprire SQLWorkbench e creare il database copiando il file contenuto nella directory Database della repository.
 Una volta eseguiti tutti i passaggi sopra riportati avviare il file "Main" dal vostro IDE.
-
-![Screenshot 2024-01-28 183234](https://github.com/gisolfi02/MediCare/assets/114088374/9ed9c62b-b7f4-4237-a3f8-b4614808c430)
+<p align="center">
+  <img src="https://github.com/gisolfi02/MediCare/assets/114088374/9ed9c62b-b7f4-4237-a3f8-b4614808c430">
+</p>
 
 ## Link utili
 Di seguito riportiamo il link per l'installazione e la configurazione di MySQL e MySQL Workbench: 
