@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/gisolfi02/MediCare/assets/114088374/6b0c6a3e-062f-4865-89cd-26894e0f4566" style="width:300px;">
+  <img src="https://github.com/gisolfi02/MediCare/assets/114088374/93a7dc94-0c43-45f9-9e29-6670e643dc5c" style="width:300px;">
 </p>
 
 # MediCare
