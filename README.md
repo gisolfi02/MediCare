@@ -1,13 +1,13 @@
+# **MediCare**  
 <p align="center">
   <img src="https://github.com/gisolfi02/MediCare/assets/114088374/93a7dc94-0c43-45f9-9e29-6670e643dc5c" alt="MediCare Logo" style="width:300px;">
 </p>
 
-# **MediCare**  
-Repository del progetto sviluppato durante il corso di **Ingegneria del Software** tenuto dal **Prof. Carmine Gravino** presso l'Università degli Studi di Salerno.
+Repository of the project developed during the **Software Engineering** course taught by **Prof. Carmine Gravino** at the University of Salerno.
 
 ---
 
-## 👥 **Chi siamo**
+## 👥 **Who We Are**
 - [@astappetto02](https://github.com/Astappetto02)  
 - [@gfavale1](https://github.com/gfavale1)  
 - [@gi0NZ](https://github.com/Gi0NZ)  
@@ -15,53 +15,53 @@ Repository del progetto sviluppato durante il corso di **Ingegneria del Software
 
 ---
 
-## 🩺 **Cos'è MediCare?**
-**MediCare** è un'app progettata per migliorare l'esperienza nel settore sanitario, affrontando inefficienze e semplificando l'accesso alle risorse mediche per persone di tutte le età.  
-L'obiettivo è sensibilizzare i giovani verso il contesto medico e coinvolgere gli adulti, incentivando una gestione consapevole della propria salute.  
+## 🩺 **What is MediCare?**
+**MediCare** is an app designed to improve the healthcare experience, addressing inefficiencies and simplifying access to medical resources for people of all ages.  
+The goal is to raise awareness among young people about the medical field and engage adults, encouraging conscious health management.  
 
 ---
 
-## 📋 **Funzionalità principali**  
-MediCare offre agli utenti le seguenti funzionalità:  
-- **Registrazione e Login** per accedere in modo sicuro all'applicazione.  
-- **Prenotazione visite mediche** con medici specializzati.  
-- **Ricerca ospedali** tramite Google Maps o per località inserita manualmente.  
-- **Chatbot per diagnosi preliminari** (non ufficiali).  
-- **Storico prenotazioni** per visualizzare tutte le visite effettuate.  
-- **Gestione prenotazioni:**  
-  - Modifica delle prenotazioni attive.  
-  - Cancellazione delle prenotazioni in corso.  
-- **Eliminazione account** per chiudere il proprio profilo.  
+## 📋 **Main Features**  
+MediCare provides users with the following functionalities:  
+- **Registration and Login** to securely access the application.  
+- **Medical appointment booking** with specialized doctors.  
+- **Hospital search** using Google Maps or manually entered location.  
+- **Chatbot for preliminary diagnoses** (non-official).  
+- **Appointment history** to view all past visits.  
+- **Appointment management:**  
+  - Modify active appointments.  
+  - Cancel ongoing appointments.  
+- **Account deletion** to close the user profile.  
 
 ---
 
-## 🚀 **Come iniziare**
-### **Requisiti**
-Per utilizzare MediCare, assicurati di avere installato:  
-- [IntelliJ IDEA](https://www.jetbrains.com/idea/) (o un IDE equivalente).  
+## 🚀 **Getting Started**
+### **Requirements**
+To use MediCare, make sure you have installed:  
+- [IntelliJ IDEA](https://www.jetbrains.com/idea/) (or an equivalent IDE).  
 - MySQL Workbench.  
 - MySQL Server.  
 
-### **Configurazione**
-1. **Clona la repository** sul tuo IDE:  
+### **Setup**
+1. **Clone the repository** into your IDE:  
 ```bash
 git clone https://github.com/gisolfi02/MediCare.git
 ```
-2. **Configura il database**:
-- Apri il file **ConPool** e modifica la configurazione del database, inserendo la tua password MySQL al posto del valore predefinito.
+2. **Configure the database**:
+- Open the **ConPool** file and modify the database configuration, entering your MySQL password instead of the default value.
 <p align="center">
   <img src="https://github.com/gisolfi02/MediCare/assets/114088374/dd2e4d42-e018-4448-87e2-a8cf47a32703">
 </p>
 
-3. **Crea il database**:
-- Apri MySQL Workbench.
-- Importa e esegui il file SQL contenuto nella directory Database della repository per creare il database richiesto dall'app
+3. **Create the database**:
+- Open MySQL Workbench.
+- Import and execute the SQL file located in the **Database** directory of the repository to create the required database for the app.
 
-4. **Esegui l'applicazione**:
-- Torna al tuo IDE e avvia il file Main per eseguire MediCare.
+4. **Run the application**:
+- Go back to your IDE and start the **Main** file to run MediCare.
 <p align="center">
   <img src="https://github.com/gisolfi02/MediCare/assets/114088374/9ed9c62b-b7f4-4237-a3f8-b4614808c430">
 </p>
 
-## Link utili
-[Guida completa all'installazione di MySQL Workbench](https://www.simplilearn.com/tutorials/mysql-tutorial/mysql-workbench-installation).
+## Useful Links
+[Complete Guide to Installing MySQL Workbench](https://www.simplilearn.com/tutorials/mysql-tutorial/mysql-workbench-installation).
